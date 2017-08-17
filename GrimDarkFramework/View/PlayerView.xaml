@@ -5,52 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GrimDarkFramework.View"
              xmlns:viewmodel="clr-namespace:GrimDarkFramework.ViewModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance viewmodel:DemoItem, IsDesignTimeCreatable=True }">
+             d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <DataTemplate DataType="{x:Type domain:DocumentationLink}">
-                <Button x:Name="Root" ToolTip="Wiki Article" ToolTipService.InitialShowDelay="0" 
-                        Style="{DynamicResource MaterialDesignFlatButton}"
-                        Command="{Binding Open}">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon x:Name="PackIcon" Kind="BookOpenVariant" />
-                        <TextBlock Margin="8 0 0 0" Style="{StaticResource MaterialDesignBody1TextBlock}"
-                                   Text="{Binding Label, Mode=OneWay}" />
-                    </StackPanel>
-                </Button>
-                <DataTemplate.Triggers>
-                    <DataTrigger Binding="{Binding Type}" Value="DemoPageSource">
-                        <Setter TargetName="PackIcon" Property="Kind" Value="Xml" />
-                        <Setter TargetName="Root" Property="ToolTip" Value="Demo Source" />
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding Type}" Value="StyleSource">
-                        <Setter TargetName="PackIcon" Property="Kind" Value="Brush" />
-                        <Setter TargetName="Root" Property="ToolTip" Value="Style Source" />
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding Type}" Value="Video">
-                        <Setter TargetName="PackIcon" Property="Kind" Value="YoutubePlay" />
-                        <Setter TargetName="Root" Property="ToolTip" Value="Video Help" />
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding Type}" Value="ControlSource">
-                        <Setter TargetName="PackIcon" Property="Kind" Value="CodeBraces" />
-                        <Setter TargetName="Root" Property="ToolTip" Value="Object Source/API" />
-                    </DataTrigger>
-                </DataTemplate.Triggers>
-            </DataTemplate>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
             <StackPanel Margin="16" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Information" VerticalAlignment="Center" />
                 <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Information Links:</TextBlock>
-                <ItemsControl Margin="16 0 0 0" ItemsSource="{Binding Documentation}">
+                <ItemsControl Margin="16 0 0 0" ItemsSource="{Binding Player}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" />

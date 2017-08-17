@@ -19,11 +19,11 @@ namespace GrimDarkFramework.Missions
         public int RoundNum { get { return _player.Round; } }
         public int VictoryPoints { get { return _player.VPoints; } }
 
-        private bool _firstBlood;
+        private bool _firstBlood = false;
         public bool FirstBlood { get { return _firstBlood; } }
-        private bool _slayWar;
+        private bool _slayWar = false;
         public bool SlayWar { get { return _slayWar; } }
-        private bool _lineBreak;
+        private bool _lineBreak = false;
         public bool LineBreak { get { return _lineBreak; } }
         
         public int Discards { get { return _mission.CalculateDiscards(RoundNum, _player.Count); } }
