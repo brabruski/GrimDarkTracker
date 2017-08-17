@@ -13,32 +13,32 @@ namespace GrimDarkFramework.Missions
         {
             switch (m)
             {
-                case MissionEnum.EGuns:
-                    return new MissionGuns();
-                case MissionEnum.EMercy:
-                    return new MissionMercy();
-                case MissionEnum.ERelic:
-                    return new MissionRelic();
                 case MissionEnum.ERetrieve:
                     return new EMissionRetrieval();
-                case MissionEnum.EScour:
-                    return new MissionScour();
-                case MissionEnum.ESecure:
-                    return new MissionSecure();
-                case MissionEnum.MCleanse:
-                    return new MissionCleanse();
-                case MissionEnum.MCloak:
-                    return new MissionCloak();
-                case MissionEnum.MContact:
-                    return new MissionContact();
-                case MissionEnum.MDeadlock:
-                    return new MissionDeadlock();
-                case MissionEnum.MEscalate:
-                    return new MissionEscalate();
-                case MissionEnum.MSpoils:
-                    return new MissionSpoils();
+                //case MissionEnum.EGuns:
+                //    return new MissionGuns();
+                //case MissionEnum.EMercy:
+                //    return new MissionMercy();
+                //case MissionEnum.ERelic:
+                //    return new MissionRelic();                
+                //case MissionEnum.EScour:
+                //    return new MissionScour();
+                //case MissionEnum.ESecure:
+                //    return new MissionSecure();
+                //case MissionEnum.MCleanse:
+                //    return new MissionCleanse();
+                //case MissionEnum.MCloak:
+                //    return new MissionCloak();
+                //case MissionEnum.MContact:
+                //    return new MissionContact();
+                //case MissionEnum.MDeadlock:
+                //    return new MissionDeadlock();
+                //case MissionEnum.MEscalate:
+                //    return new MissionEscalate();
+                //case MissionEnum.MSpoils:
+                //    return new MissionSpoils();
                 default:
-                    return new MercyMission();
+                    return new EMissionRetrieval();
             }            
         }
     }
