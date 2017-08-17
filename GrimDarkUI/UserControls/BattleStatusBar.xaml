@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="GrimDarkUI.UserControls.BattleStatusBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:GrimDarkUI.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Disabled">
+            <WrapPanel Margin="16" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Fire" VerticalAlignment="Center" />
+                <TextBlock Margin="2 0 0 0" VerticalAlignment="Center">VPs:</TextBlock>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center">0</TextBlock>
+                <TextBlock Margin="18 0 0 0" VerticalAlignment="Center">Round:</TextBlock>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center">1</TextBlock>
+                <TextBlock Margin="18 0 0 0" VerticalAlignment="Center">Discards:</TextBlock>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center">0</TextBlock>
+                <TextBlock Margin="18 0 0 0" VerticalAlignment="Center">Draws:</TextBlock>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center">0</TextBlock>
+                <Button x:Name="Root" ToolTip="Wiki Article" ToolTipService.InitialShowDelay="0" 
+                        Style="{DynamicResource MaterialDesignFlatButton}"
+                        Command="{Binding Open}">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon x:Name="PackIcon" Kind="PlayCircle" />
+                        <TextBlock Margin="2 0 0 0" Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                   Text="End Round" />
+                    </StackPanel>
+                </Button>
+            </WrapPanel>
+        </ScrollViewer>
+        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" />
+    </Grid>
+</UserControl>
