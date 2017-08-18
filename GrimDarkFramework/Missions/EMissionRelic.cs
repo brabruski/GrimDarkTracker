@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class EMissionRetrieval : IMission
+    class EMissionRelic : IMission
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }
@@ -32,11 +32,20 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionRetrieval(string type)
+        public EMissionRelic(string type)
         {
-            int[] _objectives = new int[] { 3, 3, 3, 3};
-            _name = "Retrieval Mission";
-            _descrip = "Setup four Objective Markers on the battlefield. Objective Markers can be placed anywhere on the battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield as well as not within 12\" of any other Objective Marker. Each Objective Marker controlled by a unit at the end of the game is worth 3 Victory Points to the player whose unit is controlling it. An Objective Marker is controlled by whichever player has more models within 3\" of an Objective Marker.";
+            int[] _objectives = new int[] { 1 };
+            _name = "The Relic";
+            _descrip = "Place a single Objective Marker at the centre of the battlefield to represent " +
+                "the Relic. If a player's unit is carrying the Relic at the end of the game, " +
+                "then they win a Major Victory. If no player is carrying the Relic, then the player " +
+                "with a model closest to the relic wins a Minor Victory. If no player has a unit " +
+                "carrying the Relic or player units are equally distanced to the Relic, then the game " +
+                "is a Draw.\n" +
+                "\nRELIC - Any INFANTRY model can move onto the Relic and will then automatically pick it up. " +
+                "The Relic then remains with that model until it is dropped (the model must be slain or flee for the " +
+                "Relic to be dropped).A model carrying the Relic cannot embark in any TRANSPORT, move more than 9\" " +
+                "in any single phase or leave the battlefield.";
             _type = type;
             _startingObj = 0;
             _tacticalMission = false;

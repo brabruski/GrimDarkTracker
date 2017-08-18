@@ -16,10 +16,11 @@ namespace GrimDarkFramework.Model
 
         int StartingObjCards { get; }
         bool TacticalMission { get; }
-        int Discards { get; }
+        bool Discard { get; }
         int Draws { get; }
 
-        int CalculateDiscards(int round, int count);
+        bool UpdateDiscard(int roundNum, int currentDeckCount);
+        bool DiscardObj(Card card);
         int CalculateDraws(int round, int count);
     }
 }

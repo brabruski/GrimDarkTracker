@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class EMissionRetrieval : IMission
+    class EMissionScour : IMission
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }
@@ -32,11 +32,19 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionRetrieval(string type)
+        public EMissionScour(string type)
         {
-            int[] _objectives = new int[] { 3, 3, 3, 3};
-            _name = "Retrieval Mission";
-            _descrip = "Setup four Objective Markers on the battlefield. Objective Markers can be placed anywhere on the battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield as well as not within 12\" of any other Objective Marker. Each Objective Marker controlled by a unit at the end of the game is worth 3 Victory Points to the player whose unit is controlling it. An Objective Marker is controlled by whichever player has more models within 3\" of an Objective Marker.";
+            int[] _objectives = new int[] { 1, 2, 2, 2, 2, 4 };
+            _name = "The Scouring";
+            _descrip = "Setup six Objective Markers on the battlefield. " +
+                "Objective Markers can be placed anywhere on the battlefield, as long as each " +
+                "Objective Marker is not within 6\" of the edge of the battlefield as well as " +
+                "not within 12\" of any other Objective Marker. Once both armies have been setup, " +
+                "randomly select an Objective Marker to be the Superior Objective and then randomly " +
+                "select an Objective Marker to be the Inferior Objective. At the end of the game, " +
+                "players score Victory Points based on the Objective Markers they control. " +
+                "The Superior Objective is worth 4 Victory Points and the Inferior Objective is " +
+                "worth 1 Victory Point. All other Objective Markers are worth 2 Victory Points each.";
             _type = type;
             _startingObj = 0;
             _tacticalMission = false;

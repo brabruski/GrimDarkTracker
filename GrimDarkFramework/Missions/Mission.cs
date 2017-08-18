@@ -25,8 +25,8 @@ namespace GrimDarkFramework.Missions
         public bool SlayWar { get { return _slayWar; } }
         private bool _lineBreak = false;
         public bool LineBreak { get { return _lineBreak; } }
-        
-        public int Discards { get { return _mission.CalculateDiscards(RoundNum, _player.Count); } }
+
+        public bool Discard { get { return _mission.Discard; } }
         public int Draws { get { return _mission.CalculateDraws(RoundNum, _player.Count); } }
 
 
@@ -72,9 +72,19 @@ namespace GrimDarkFramework.Missions
             _player.specialVPoints = amount;
         }
 
-        public void AddRound()
+        public bool AddRound()
         {
-            _player.AddRound();
+            if (IsTactical)
+            {
+                if (!_mission.UpdateDiscard(_player.Round, _player.Count))
+                    _player.AddRound();
+                return _mission.UpdateDiscard(_player.Round, _player.Count);
+            }
+            else
+            {
+                _player.AddRound();
+                return true;
+            }
         }
 
         public void AddPoints(int p)
@@ -84,7 +94,19 @@ namespace GrimDarkFramework.Missions
 
         public void Deal()
         {
-            _player.Deal();
+            if (IsTactical)
+            {
+                if (Draws > 0)
+                    _player.Deal();
+            }
+            else
+                _player.Deal();
+        }
+
+        //Default to null in case there are no Tactical Objectives
+        public bool DiscardObj(Card card = null)
+        {
+            return _mission.DiscardObj(card);
         }
     }
 }

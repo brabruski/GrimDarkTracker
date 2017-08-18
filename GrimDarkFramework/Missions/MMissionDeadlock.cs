@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class EMissionRetrieval : IMission
+    class MMissionDeadlock : IMission
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }
@@ -32,31 +32,52 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionRetrieval(string type)
+        public MMissionDeadlock(string type)
         {
-            int[] _objectives = new int[] { 3, 3, 3, 3};
-            _name = "Retrieval Mission";
-            _descrip = "Setup four Objective Markers on the battlefield. Objective Markers can be placed anywhere on the battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield as well as not within 12\" of any other Objective Marker. Each Objective Marker controlled by a unit at the end of the game is worth 3 Victory Points to the player whose unit is controlling it. An Objective Marker is controlled by whichever player has more models within 3\" of an Objective Marker.";
+            int[] _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
+            _name = "Deadlock";
+            _descrip = "Setup six Objective Markers on the battlefield. " +
+                "Objective Markers can be placed anywhere on the battlefield, as long as each " +
+                "Objective Marker is not within 6\" of the edge of the battlefield as well as not " +
+                "within 12\" of any other Objective Marker. \n" +
+                " \nSTRATEGIC DEADLOCK - From the start of the Third Round of battle, Strategems " +
+                "used by players cost double Command Points.";
             _type = type;
-            _startingObj = 0;
-            _tacticalMission = false;
+            _startingObj = 6;
+            _tacticalMission = true;
             _discard = false;
             _draws = 0;
         }
 
+
+
         public int CalculateDraws(int round, int count)
         {
-            return 0;
+            int tempDraw = 7 - round - count;
+            if (tempDraw < 0)
+                tempDraw = 0;
+            _draws = tempDraw;
+            return tempDraw;
         }
 
         public bool UpdateDiscard(int round, int count)
         {
+            if (_discard && (CalculateDiscards(round, count) >= 0))
+                _discard = false;
+
             return _discard;
+        }
+
+        private int CalculateDiscards(int round, int count)
+        {
+            int tempDiscards = 7 - round - count;            
+            return tempDiscards;
         }
 
         public bool DiscardObj(Card card)
         {
-            return true;
+            _discard = true;
+            return _discard;
         }
     }
 }

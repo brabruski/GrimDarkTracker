@@ -101,10 +101,18 @@
     </ApplicationDefinition>
     <Compile Include="Domain\DatabaseFactory.cs" />
     <Compile Include="Domain\IDatabase.cs" />
+    <Compile Include="Missions\EMissionGuns.cs" />
+    <Compile Include="Missions\EMissionMercy.cs" />
+    <Compile Include="Missions\EMissionRelic.cs" />
+    <Compile Include="Missions\EMissionScour.cs" />
+    <Compile Include="Missions\EMissionSecure.cs" />
     <Compile Include="Missions\Mission.cs" />
     <Compile Include="Missions\MissionEnum.cs" />
     <Compile Include="Missions\MissionFactory.cs" />
     <Compile Include="Missions\EMissionRetrieval.cs" />
+    <Compile Include="Missions\MMissionCleanse.cs" />
+    <Compile Include="Missions\MMissionCloak.cs" />
+    <Compile Include="Missions\MMissionDeadlock.cs" />
     <Compile Include="Missions\SpecialMissionEnum.cs" />
     <Compile Include="Model\Deck.cs" />
     <Compile Include="Model\PointRange.cs" />

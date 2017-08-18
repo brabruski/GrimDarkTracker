@@ -11,35 +11,38 @@ namespace GrimDarkFramework.Missions
     {
         public static IMission CreateMission(MissionEnum m)
         {
+            string eternal = "Eternal War";
+            string maelstrom = "Maelstrom of War";
+
             switch (m)
             {
                 case MissionEnum.ERetrieve:
-                    return new EMissionRetrieval();
-                //case MissionEnum.EGuns:
-                //    return new MissionGuns();
-                //case MissionEnum.EMercy:
-                //    return new MissionMercy();
-                //case MissionEnum.ERelic:
-                //    return new MissionRelic();                
-                //case MissionEnum.EScour:
-                //    return new MissionScour();
-                //case MissionEnum.ESecure:
-                //    return new MissionSecure();
-                //case MissionEnum.MCleanse:
-                //    return new MissionCleanse();
-                //case MissionEnum.MCloak:
-                //    return new MissionCloak();
+                    return new EMissionRetrieval(eternal);
+                case MissionEnum.EGuns:
+                    return new EMissionGuns(eternal);
+                case MissionEnum.EMercy:
+                    return new EMissionMercy(eternal);
+                case MissionEnum.ERelic:
+                    return new EMissionRelic(eternal);                
+                case MissionEnum.EScour:
+                    return new EMissionScour(eternal);
+                case MissionEnum.ESecure:
+                    return new EMissionSecure(eternal);
+                case MissionEnum.MCleanse:
+                    return new MMissionCleanse(maelstrom);
+                case MissionEnum.MCloak:
+                    return new MMissionCloak(maelstrom);
                 //case MissionEnum.MContact:
-                //    return new MissionContact();
-                //case MissionEnum.MDeadlock:
-                //    return new MissionDeadlock();
+                //    return new MissionContact(maelstrom);
+                case MissionEnum.MDeadlock:
+                    return new MMissionDeadlock(maelstrom);
                 //case MissionEnum.MEscalate:
-                //    return new MissionEscalate();
+                //    return new MissionEscalate(maelstrom);
                 //case MissionEnum.MSpoils:
-                //    return new MissionSpoils();
+                //    return new MissionSpoils(maelstrom);
                 default:
-                    return new EMissionRetrieval();
-            }            
+                    return new EMissionMercy(eternal);
+            }
         }
     }
 }
