@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public EMissionSecure(string type)
         {
-            int[] _objectives = new int[] { 3, 3 };
+            _objectives = new int[] { 3, 3 };
             _name = "Secure & Control";
             _descrip = "Players setup one Objective Marker each in their own Deployment Zone. " +
                 "Objective Markers cannot be placed 6\" or less to the battlefield edge. " +

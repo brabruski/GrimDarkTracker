@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public EMissionMercy(string type)
         {
-            int[] _objectives = new int[0];
+            _objectives = new int[0];
             _name = "No Mercy";
             _descrip = "Each player scores 1 Victory Point for each enemy unit that is destroyed.";
             _type = type;

@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public MMissionDeadlock(string type)
         {
-            int[] _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
+            _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
             _name = "Deadlock";
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each " +

@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public EMissionGuns(string type)
         {
-            int[] _objectives = new int[] { 3, 3, 3, 3 };
+            _objectives = new int[] { 3, 3, 3, 3 };
             _name = "Big Guns Never Tire";
             _descrip = "Setup four Objective Markers on the battlefield. Objective Markers can be placed anywhere on the battlefield, " +
                 "as long as each Objective Marker is not within 6\" of the edge of the battlefield as " +

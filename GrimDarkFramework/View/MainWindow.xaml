@@ -3,10 +3,73 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GrimDarkFramework.View"
+        xmlns:viewmodel="clr-namespace:GrimDarkFramework.ViewModel"
+        xmlns:view="clr-namespace:GrimDarkFramework.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
+        Title="grimdark tracker" Height="600" Width="825"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="Caslon Antique"
+        Background="{DynamicResource MaterialDesignPaper}">
+<!--
+    Set up associations for files in folders. Whenever you use the name, it will automatically point to the folder
+    xmlns:viewmodels="clr-namespace:GrimDarkUI.ViewModels"
+    xmlns:usercontrols="clr-namespace:GrimDarkUI.UserControls" 
+    -->
+
+<Window.Resources>
+    <DataTemplate x:Name="HomeViewTemplate" DataType="{x:Type viewmodel:HomeViewModel}">
+        <view:HomeView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate x:Name="MissionSelectViewTemplate" DataType="{x:Type viewmodel:MissionSelectViewModel}">
+        <view:MissionSelectView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate x:Name="CardViewTemplate" DataType="{x:Type viewmodel:CardViewModel}">
+        <view:CardView DataContext="{Binding}" />
+    </DataTemplate>
+    <DataTemplate x:Name="AboutViewTemplate" DataType="{x:Type viewmodel:AboutViewModel}">
+        <view:AboutView DataContext="{Binding}" />
+    </DataTemplate>
+        <DataTemplate x:Name="BattleViewTemplate" DataType="{x:Type viewmodel:BattleViewModel}">
+            <view:BattleView DataContext="{Binding}" />
+        </DataTemplate>
+    </Window.Resources>
+
+<DockPanel>
+    <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                            Mode="PrimaryMid" DockPanel.Dock="Top">
+        <DockPanel>
+            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
+                <StackPanel>
+                    <Button Content="New Battle" Click="MissionSelectView_Clicked"/>
+                    <Button Content="Save Battle" />
+                    <Button Content="Continue Battle" Click="CardView_Clicked"/>
+                    <Separator/>
+                    <Button Content="About" Click="AboutView_Clicked"/>
+
+                    <Button Content="Help" />
+                    <Separator/>
+                    <Button Content="Exit" />
+                </StackPanel>
+            </materialDesign:PopupBox>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#DDFFFFFF">Grim Dark Victory Point Tracker</TextBlock>
+        </DockPanel>
+    </materialDesign:ColorZone>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1">
+            <ContentControl Content="{Binding}"/>
+        </ScrollViewer>
     </Grid>
+</DockPanel>
+
 </Window>
+

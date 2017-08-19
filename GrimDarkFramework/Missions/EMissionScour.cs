@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public EMissionScour(string type)
         {
-            int[] _objectives = new int[] { 1, 2, 2, 2, 2, 4 };
+            _objectives = new int[] { 1, 2, 2, 2, 2, 4 };
             _name = "The Scouring";
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each " +

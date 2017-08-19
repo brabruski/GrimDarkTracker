@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public MMissionEscalate(string type)
         {
-            int[] _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
+            _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
             _name = "Tactical Escalation";
             _descrip = "Setup six Objective Markers on the battlefield. Objective Markers can be placed anywhere on the battlefield, as long as each Objective" +
                 " Marker is not within 6\" of the edge of the battlefield as well as not within 12\" of any " +

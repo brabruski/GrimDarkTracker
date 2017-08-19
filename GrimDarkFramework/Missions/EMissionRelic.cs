@@ -34,7 +34,7 @@ namespace GrimDarkFramework.Missions
 
         public EMissionRelic(string type)
         {
-            int[] _objectives = new int[] { 1 };
+            _objectives = new int[] { 1 };
             _name = "The Relic";
             _descrip = "Place a single Objective Marker at the centre of the battlefield to represent " +
                 "the Relic. If a player's unit is carrying the Relic at the end of the game, " +
