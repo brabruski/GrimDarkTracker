@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class MMissionCleanse : IMissionType
+    class MMissionContact : IMissionType
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }
@@ -32,42 +32,42 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public MMissionCleanse(string type)
+        public MMissionContact(string type)
         {
             int[] _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
-            _name = "Cleanse & Capture";
-            _descrip = "Setup six Objective Markers on the battlefield. Objective Markers can be " +
-                "placed anywhere on the battlefield, as long as each Objective Marker is not within 6\" " +
-                "of the edge of the battlefield as well as not within 12\" of any other " +
-                "Objective Marker.";
+            _name = "Contact Lost";
+            _descrip = "Setup six Objective Markers on the battlefield. Objective Markers can be placed anywhere on " +
+                "the battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield " +
+                "as well as not within 12\" of any other Objective Marker.\n" +
+                "\nSTRATAGEM TEMPORARY COMMS UPLINK -A player may spend 3CP to generate a Tactical Objective " +
+                "as long as they have fewer than 6 active objectives.";
             _type = type;
-            _startingObj = 3;
+            _startingObj = 6;
             _tacticalMission = true;
             _discard = false;
             _draws = 0;
         }
 
-        public int CalculateDraws(int round, int count)
-        {
-            int tempDraw = 3 - count;
-            if (tempDraw < 0)
-                tempDraw = 0;
-            _draws = tempDraw;
-            return _draws;
-        }
-
-        public bool UpdateDiscard(int round, int count)
+        public bool UpdateDiscard(int roundNum, int currentDeckCount)
         {
             if (_discard)
                 _discard = false;
             return _discard;
-
         }
 
         public bool DiscardObj(Card card)
         {
             _discard = true;
             return _discard;
+        }
+
+        public int CalculateDraws(int round, int count)
+        {
+            int tempDraw = 6 - count;
+            if (tempDraw < 0)
+                tempDraw = 0;
+            _draws = tempDraw;
+            return _draws;
         }
     }
 }

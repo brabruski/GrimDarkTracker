@@ -106,13 +106,16 @@
     <Compile Include="Missions\EMissionRelic.cs" />
     <Compile Include="Missions\EMissionScour.cs" />
     <Compile Include="Missions\EMissionSecure.cs" />
-    <Compile Include="Missions\Mission.cs" />
+    <Compile Include="Missions\MissionModel.cs" />
     <Compile Include="Missions\MissionEnum.cs" />
     <Compile Include="Missions\MissionFactory.cs" />
     <Compile Include="Missions\EMissionRetrieval.cs" />
     <Compile Include="Missions\MMissionCleanse.cs" />
     <Compile Include="Missions\MMissionCloak.cs" />
+    <Compile Include="Missions\MMissionContact.cs" />
     <Compile Include="Missions\MMissionDeadlock.cs" />
+    <Compile Include="Missions\MMissionEscalate.cs" />
+    <Compile Include="Missions\MMissionSpoils.cs" />
     <Compile Include="Missions\SpecialMissionEnum.cs" />
     <Compile Include="Model\Deck.cs" />
     <Compile Include="Model\PointRange.cs" />
@@ -174,7 +177,7 @@
     <Compile Include="Model\Army.cs" />
     <Compile Include="Model\Battle.cs" />
     <Compile Include="Model\Card.cs" />
-    <Compile Include="Missions\IMission.cs" />
+    <Compile Include="Missions\IMissionType.cs" />
     <Compile Include="Model\CardType.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

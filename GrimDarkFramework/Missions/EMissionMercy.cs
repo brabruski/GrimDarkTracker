@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class EMissionMercy : IMission
+    class EMissionMercy : IMissionType
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }

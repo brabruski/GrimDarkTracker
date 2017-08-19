@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class Mission
+    class MissionModel
     {
-        private IMission _mission;
-        public IMission CurrentMission { get { return _mission; } }
+        private IMissionType _mission;
+        public IMissionType CurrentMission { get { return _mission; } }
 
         public bool IsTactical { get { return _mission.TacticalMission; } }
 
-        public Player Player { get { return _player; } }
         private Player _player;
+        public Player Player { get { return _player; } }        
         public int RoundNum { get { return _player.Round; } }
         public int VictoryPoints { get { return _player.VPoints; } }
 
@@ -30,7 +30,7 @@ namespace GrimDarkFramework.Missions
         public int Draws { get { return _mission.CalculateDraws(RoundNum, _player.Count); } }
 
 
-        public Mission(MissionEnum m, int army)
+        public MissionModel(MissionEnum m, int army)
         {
             _mission = MissionFactory.CreateMission(m);
             _player = new Player(army);

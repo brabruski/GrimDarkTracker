@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    class MMissionCloak : IMission
+    class MMissionCloak : IMissionType
     {
         private int[] _objectives;
         public int[] Objectives { get { return _objectives; } }
@@ -59,7 +59,8 @@ namespace GrimDarkFramework.Missions
             int tempCount = count - 3;
             if (tempCount < 0)
                 tempCount = 0;
-            return tempCount;
+            _draws = tempCount;
+            return _draws;
         }
 
         public bool UpdateDiscard(int round, int count)

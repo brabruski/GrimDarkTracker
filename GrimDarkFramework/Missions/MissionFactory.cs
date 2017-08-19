@@ -9,7 +9,7 @@ namespace GrimDarkFramework.Missions
 {
     class MissionFactory
     {
-        public static IMission CreateMission(MissionEnum m)
+        public static IMissionType CreateMission(MissionEnum m)
         {
             string eternal = "Eternal War";
             string maelstrom = "Maelstrom of War";
@@ -32,14 +32,14 @@ namespace GrimDarkFramework.Missions
                     return new MMissionCleanse(maelstrom);
                 case MissionEnum.MCloak:
                     return new MMissionCloak(maelstrom);
-                //case MissionEnum.MContact:
-                //    return new MissionContact(maelstrom);
+                case MissionEnum.MContact:
+                    return new MMissionContact(maelstrom);
                 case MissionEnum.MDeadlock:
                     return new MMissionDeadlock(maelstrom);
-                //case MissionEnum.MEscalate:
-                //    return new MissionEscalate(maelstrom);
-                //case MissionEnum.MSpoils:
-                //    return new MissionSpoils(maelstrom);
+                case MissionEnum.MEscalate:
+                    return new MMissionEscalate(maelstrom);
+                case MissionEnum.MSpoils:
+                    return new MMissionSpoils(maelstrom);
                 default:
                     return new EMissionMercy(eternal);
             }
