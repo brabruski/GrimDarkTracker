@@ -11,5 +11,10 @@ namespace GrimDarkFramework.Model
     {
         public string CardTypeName { get; set; }
         public int CardTypeId { get; set; }
+
+        public override string ToString()
+        {
+            return CardTypeName;
+        }
     }
 }

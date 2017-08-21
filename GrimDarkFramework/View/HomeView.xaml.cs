@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrimDarkFramework.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace GrimDarkFramework.View
         public HomeView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new MissionSelectViewModel();
         }
     }
 }

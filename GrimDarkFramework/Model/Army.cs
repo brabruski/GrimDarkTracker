@@ -11,6 +11,11 @@ namespace GrimDarkFramework.Model
     {
         public int ArmyId { get; set; }
         public string ArmyName { get; set; }
-        public string ArmyColour { get; set; }  
+        public string ArmyColour { get; set; }
+
+        public override string ToString()
+        {
+            return ArmyName;
+        }
     }
 }

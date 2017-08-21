@@ -27,15 +27,12 @@ namespace GrimDarkUI.UserControls
             InitializeComponent();
         }
 
-        private void MissionSelectView_Clicked(object sender, RoutedEventArgs e)
+        private void MissionSelectViewBtn_Clicked(object sender, RoutedEventArgs e)
         {
-            Tester.Text = "Clicked";
             DataContext = new MissionSelectViewModel();
+            // DataContext = FindResource("MainWindowLink") as ViewModels.MissionSelectViewModel;
             Debug.WriteLine("Button Clicked");
             
         }
-
-
-
     }
 }

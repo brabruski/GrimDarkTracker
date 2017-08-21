@@ -45,12 +45,11 @@
         <DockPanel>
             <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
                 <StackPanel>
-                    <Button Content="New Battle" Click="MissionSelectView_Clicked"/>
+                    <Button Content="New Battle" />
                     <Button Content="Save Battle" />
-                    <Button Content="Continue Battle" Click="CardView_Clicked"/>
+                    <Button Content="Continue Battle" />
                     <Separator/>
-                    <Button Content="About" Click="AboutView_Clicked"/>
-
+                    <Button Content="About" />
                     <Button Content="Help" />
                     <Separator/>
                     <Button Content="Exit" />

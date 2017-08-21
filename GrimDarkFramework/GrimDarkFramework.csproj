@@ -119,7 +119,10 @@
     <Compile Include="Missions\SpecialMissionEnum.cs" />
     <Compile Include="Model\Deck.cs" />
     <Compile Include="Model\PointRange.cs" />
+    <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\BattleViewModel.cs" />
+    <Compile Include="ViewModel\BooleanNotConverter.cs" />
+    <Compile Include="ViewModel\BooleanVisibilityConverter.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MissionSelectViewModel.cs" />

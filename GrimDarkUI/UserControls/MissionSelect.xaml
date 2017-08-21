@@ -10,33 +10,29 @@
     <Grid Margin="8">
         <StackPanel>
             <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}">Choose Your Army:</TextBlock>
-        <ComboBox materialDesign:HintAssist.Hint="Army Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
+            <ComboBox materialDesign:HintAssist.Hint="Army Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
                                   MaxDropDownHeight="200"
                                   Margin="8 8 8 8">
-                <ComboBoxItem>Core Rules</ComboBoxItem>            
-        </ComboBox>
-            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}">Choose The Mission:</TextBlock>
-            <ComboBox materialDesign:HintAssist.Hint="Mission Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
+                <ComboBoxItem>Core Rules</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}">Select Your Mission:</TextBlock>
+            <ComboBox Name="ComboMissionSelect" materialDesign:HintAssist.Hint="Mission Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
                                   MaxDropDownHeight="200"
-                                  Margin="8 8 8 8">
-                <ComboBoxItem>Eternal War: Retrieval Mission</ComboBoxItem>
-                <ComboBoxItem>Eternal War: No Mercy</ComboBoxItem>
-                <ComboBoxItem>Eternal War: The Scouring</ComboBoxItem>
-                <ComboBoxItem>Eternal War: Big Guns Never Tire</ComboBoxItem>
-                <ComboBoxItem>Eternal War: Secure &amp; Control</ComboBoxItem>
-                <ComboBoxItem>Eternal War: The Relic</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Cleanse &amp; Capture</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Contact Lost</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Tactical Escalation</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Spoils of War</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Cloak &amp; Shadows</ComboBoxItem>
-                <ComboBoxItem>Maelstrom of War: Deadlock</ComboBoxItem>
-            </ComboBox>            
+                                  Margin="8 8 8 8"
+                      SelectionChanged="ComboMissionSelect_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding CardName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignRaisedAccentButton}">
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Sword" />
-                <TextBlock Margin="8 0 0 0">Battle!</TextBlock>                
+                <TextBlock Margin="8 0 0 0">Battle!</TextBlock>
             </StackPanel>
         </Button>
     </Grid>

@@ -61,5 +61,10 @@ namespace GrimDarkFramework.Model
             } while (num1 <= num2);
             return tempList;
         }
+
+        public override string ToString()
+        {
+            return CardName;
+        }
     }
 }

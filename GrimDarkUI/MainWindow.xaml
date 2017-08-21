@@ -64,7 +64,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ScrollViewer Grid.Row="1">
-                <ContentControl Content="{Binding}"/>                
+                <ContentControl x:Name="MainWindowLink" Content="{Binding}">
+                </ContentControl>
             </ScrollViewer>
         </Grid>
     </DockPanel>

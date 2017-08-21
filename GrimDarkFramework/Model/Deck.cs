@@ -45,7 +45,6 @@ namespace GrimDarkFramework.Model
             _tacticalDeck.Add(cardToAdd);
         }
 
-
         //Overloaded, Deals a card from a deck, removes the card object from the deck and returns a reference to the card object
         public Card Deal()
         {
