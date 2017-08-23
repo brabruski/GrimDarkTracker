@@ -32,10 +32,10 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionScour(string type)
+        public EMissionScour(MissionDetails details)
         {
             _objectives = new int[] { 1, 2, 2, 2, 2, 4 };
-            _name = "The Scouring";
+            _name = details.MissionName;
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each " +
                 "Objective Marker is not within 6\" of the edge of the battlefield as well as " +
@@ -45,7 +45,7 @@ namespace GrimDarkFramework.Missions
                 "players score Victory Points based on the Objective Markers they control. " +
                 "The Superior Objective is worth 4 Victory Points and the Inferior Objective is " +
                 "worth 1 Victory Point. All other Objective Markers are worth 2 Victory Points each.";
-            _type = type;
+            _type = details.MissionType;
             _startingObj = 0;
             _tacticalMission = false;
             _discard = false;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrimDarkFramework.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,41 +13,24 @@ namespace GrimDarkFramework.ViewModel
     class PlayerViewModel : INotifyPropertyChanged
     {
 
-        private string _name;
-        private object _content;
-        private ScrollBarVisibility _horizontalScrollBarVisibilityRequirement;
-        private ScrollBarVisibility _verticalScrollBarVisibilityRequirement;
-        private Thickness _marginRequirement = new Thickness(16);
+        private string _armyName;
+        public string ArmyName { get { return _armyName; } }
+        private int _round;
+        public int RoundNum { get { return _round; } }
+        private int _discards;
+        public int Discards { get { return _discards; } }
+        private int _draws;
+        public int Draws { get { return _draws; } }
+        private int _vp;
+        public int VPoints { get { return _vp; } }
+        public bool IsTactical { get; private set; }
 
-        public PlayerViewModel(string name, object content)
+        public PlayerViewModel(Player player)
         {
-            _name = name;
-            _content = content;
-        }
-
-        public string Name
-        {
-            get { return _name; }            
-        }
-
-        public object Content
-        {
-            get { return _content; }            
-        }
-
-        public ScrollBarVisibility HorizontalScrollBarVisibilityRequirement
-        {
-            get { return _horizontalScrollBarVisibilityRequirement; }            
-        }
-
-        public ScrollBarVisibility VerticalScrollBarVisibilityRequirement
-        {
-            get { return _verticalScrollBarVisibilityRequirement; }            
-        }
-
-        public Thickness MarginRequirement
-        {
-            get { return _marginRequirement; }            
+            IsTactical = player.IsTactical;
+            _armyName = player.GetArmyName();
+            _round = player.Round;
+            _vp = player.VPoints;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

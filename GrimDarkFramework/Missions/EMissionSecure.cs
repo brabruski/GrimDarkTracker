@@ -32,17 +32,17 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionSecure(string type)
+        public EMissionSecure(MissionDetails details)
         {
             _objectives = new int[] { 3, 3 };
-            _name = "Secure & Control";
+            _name = details.MissionName;
             _descrip = "Players setup one Objective Marker each in their own Deployment Zone. " +
                 "Objective Markers cannot be placed 6\" or less to the battlefield edge. " +
                 "Each Objective Marker controlled by a unit at the end of the game is worth " +
                 "3 Victory Points to the player whose unit is controlling it. " +
                 "An Objective Marker is controlled by whichever player has more models within 3\" " +
                 "of an Objective Marker.";
-            _type = type;
+            _type = details.MissionType;
             _startingObj = 0;
             _tacticalMission = false;
             _discard = false;

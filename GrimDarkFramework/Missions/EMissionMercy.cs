@@ -32,12 +32,12 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionMercy(string type)
+        public EMissionMercy(MissionDetails m)
         {
             _objectives = new int[0];
-            _name = "No Mercy";
+            _name = m.MissionName;
             _descrip = "Each player scores 1 Victory Point for each enemy unit that is destroyed.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 0;
             _tacticalMission = false;
             _discard = false;

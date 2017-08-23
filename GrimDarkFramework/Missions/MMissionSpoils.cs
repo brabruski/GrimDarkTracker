@@ -32,17 +32,17 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public MMissionSpoils(string type)
+        public MMissionSpoils(MissionDetails m)
         {
             _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
-            _name = "Spoils of War";
+            _name = m.MissionName;
             _descrip = "Setup six Objective Markers on the battlefield. Objective Markers can be placed anywhere on the " +
                 "battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield as well as " +
                 "not within 12\" of any other Objective Marker.\n" +
                 "\nPRECIOUS CARGO - any Tactical Objective titled \"Secure Objective X\" where X is the number of the " +
                 "Objective Marker, can be scored by either player no matter which player generated it. In addition, " +
                 "these Tactical Objectives can only be discarded when achieved.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 3;
             _tacticalMission = true;
             _discard = false;

@@ -32,16 +32,16 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public MMissionContact(string type)
+        public MMissionContact(MissionDetails m)
         {
             _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
-            _name = "Contact Lost";
+            _name = m.MissionName;
             _descrip = "Setup six Objective Markers on the battlefield. Objective Markers can be placed anywhere on " +
                 "the battlefield, as long as each Objective Marker is not within 6\" of the edge of the battlefield " +
                 "as well as not within 12\" of any other Objective Marker.\n" +
                 "\nSTRATAGEM TEMPORARY COMMS UPLINK -A player may spend 3CP to generate a Tactical Objective " +
                 "as long as they have fewer than 6 active objectives.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 6;
             _tacticalMission = true;
             _discard = false;

@@ -110,6 +110,7 @@
     <Compile Include="Missions\MissionEnum.cs" />
     <Compile Include="Missions\MissionFactory.cs" />
     <Compile Include="Missions\EMissionRetrieval.cs" />
+    <Compile Include="Missions\MissionDetails.cs" />
     <Compile Include="Missions\MMissionCleanse.cs" />
     <Compile Include="Missions\MMissionCloak.cs" />
     <Compile Include="Missions\MMissionContact.cs" />

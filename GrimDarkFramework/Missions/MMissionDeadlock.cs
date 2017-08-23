@@ -32,17 +32,17 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public MMissionDeadlock(string type)
+        public MMissionDeadlock(MissionDetails m)
         {
             _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
-            _name = "Deadlock";
+            _name = m.MissionName;
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each " +
                 "Objective Marker is not within 6\" of the edge of the battlefield as well as not " +
                 "within 12\" of any other Objective Marker. \n" +
                 " \nSTRATEGIC DEADLOCK - From the start of the Third Round of battle, Strategems " +
                 "used by players cost double Command Points.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 6;
             _tacticalMission = true;
             _discard = false;

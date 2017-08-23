@@ -9,39 +9,37 @@ namespace GrimDarkFramework.Missions
 {
     class MissionFactory
     {
-        public static IMissionType CreateMission(MissionEnum m)
+        public static IMissionType CreateMission(MissionDetails details)
         {
-            string eternal = "Eternal War";
-            string maelstrom = "Maelstrom of War";
-
-            switch (m)
+            
+            switch (details.Selector)
             {
                 case MissionEnum.ERetrieve:
-                    return new EMissionRetrieval(eternal);
+                    return new EMissionRetrieval(details);
                 case MissionEnum.EGuns:
-                    return new EMissionGuns(eternal);
+                    return new EMissionGuns(details);
                 case MissionEnum.EMercy:
-                    return new EMissionMercy(eternal);
+                    return new EMissionMercy(details);
                 case MissionEnum.ERelic:
-                    return new EMissionRelic(eternal);                
+                    return new EMissionRelic(details);                
                 case MissionEnum.EScour:
-                    return new EMissionScour(eternal);
+                    return new EMissionScour(details);
                 case MissionEnum.ESecure:
-                    return new EMissionSecure(eternal);
+                    return new EMissionSecure(details);
                 case MissionEnum.MCleanse:
-                    return new MMissionCleanse(maelstrom);
+                    return new MMissionCleanse(details);
                 case MissionEnum.MCloak:
-                    return new MMissionCloak(maelstrom);
+                    return new MMissionCloak(details);
                 case MissionEnum.MContact:
-                    return new MMissionContact(maelstrom);
+                    return new MMissionContact(details);
                 case MissionEnum.MDeadlock:
-                    return new MMissionDeadlock(maelstrom);
+                    return new MMissionDeadlock(details);
                 case MissionEnum.MEscalate:
-                    return new MMissionEscalate(maelstrom);
+                    return new MMissionEscalate(details);
                 case MissionEnum.MSpoils:
-                    return new MMissionSpoils(maelstrom);
+                    return new MMissionSpoils(details);
                 default:
-                    return new EMissionMercy(eternal);
+                    return new EMissionMercy(details);
             }
         }
     }

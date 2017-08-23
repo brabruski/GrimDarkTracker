@@ -19,15 +19,12 @@
             <ComboBox Name="ComboMissionSelect" materialDesign:HintAssist.Hint="Mission Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
                                   MaxDropDownHeight="200"
                                   Margin="8 8 8 8"
-                      SelectionChanged="ComboMissionSelect_SelectionChanged">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding CardName}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+                      SelectedValue="{Binding SelectedMission}"
+                      ItemsSource="{Binding MissionName}"
+                      SelectedValuePath="CardNum"
+                      DisplayMemberPath="CardName" />
+            <TextBlock Margin="10,5,5,0" VerticalAlignment="Center"><Run Text="Selected Mission: "/><Run Text="{Binding SelectedMission}"/></TextBlock>
+
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignRaisedAccentButton}">
             <StackPanel Orientation="Horizontal">

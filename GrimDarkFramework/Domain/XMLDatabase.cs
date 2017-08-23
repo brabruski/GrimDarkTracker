@@ -13,6 +13,7 @@ namespace GrimDarkFramework.Domain
         private static string _xmlArmyPath = "Db/Armies.xml";
         private static string _xmlCardPath = "Db/Cards.xml";
         public IEnumerable<Card> TactDeck;
+        public List<Army> ArmyList {get { return RetrieveArmies(); } }
 
         public XMLDatabase()
         {

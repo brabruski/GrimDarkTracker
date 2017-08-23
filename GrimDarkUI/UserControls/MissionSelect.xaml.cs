@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -21,7 +22,7 @@ namespace GrimDarkUI.UserControls
     /// <summary>
     /// Interaction logic for MissionSelect.xaml
     /// </summary>
-    public partial class MissionSelect : UserControl
+    public partial class MissionSelect : UserControl, INotifyPropertyChanged
     {
         public ObservableCollection<Card> MissionName { get { return _missionName; } set { _missionName = value; } }
         private ObservableCollection<Card> _missionName;
@@ -30,7 +31,7 @@ namespace GrimDarkUI.UserControls
         {
             InitializeComponent();
             LoadList();
-            ComboMissionSelect.ItemsSource = MissionName;
+            DataContext = this;
         }
 
         public void LoadList()
@@ -45,12 +46,27 @@ namespace GrimDarkUI.UserControls
             };
         }
 
-        private void ComboMissionSelect_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        int _SelectedMission;
+        public int SelectedMission
         {
-            string selectedCard = (string)(ComboMissionSelect.SelectedItem as PropertyInfo).GetValue(null, null);
-            Console.WriteLine(selectedCard.ToString());
-
-
+            get
+            {
+                return _SelectedMission;
+            }
+            set
+            {
+                if (_SelectedMission != value)
+                {
+                    _SelectedMission = value;
+                    RaisePropertyChanged("SelectedMission");
+                }
+            }
         }
+
+        void RaisePropertyChanged(string prop)
+        {
+            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

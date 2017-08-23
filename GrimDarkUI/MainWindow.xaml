@@ -21,7 +21,6 @@
     xmlns:viewmodels="clr-namespace:GrimDarkUI.ViewModels"
     xmlns:usercontrols="clr-namespace:GrimDarkUI.UserControls" 
     -->
-
     <Window.Resources>
         <DataTemplate x:Name="HomeViewTemplate" DataType="{x:Type viewmodel:HomeViewModel}">
             <usercontrol:Home DataContext="{Binding}" />

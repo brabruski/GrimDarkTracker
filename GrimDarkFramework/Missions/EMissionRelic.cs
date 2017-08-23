@@ -32,10 +32,10 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public EMissionRelic(string type)
+        public EMissionRelic(MissionDetails m)
         {
             _objectives = new int[] { 1 };
-            _name = "The Relic";
+            _name = m.MissionName;
             _descrip = "Place a single Objective Marker at the centre of the battlefield to represent " +
                 "the Relic. If a player's unit is carrying the Relic at the end of the game, " +
                 "then they win a Major Victory. If no player is carrying the Relic, then the player " +
@@ -46,7 +46,7 @@ namespace GrimDarkFramework.Missions
                 "The Relic then remains with that model until it is dropped (the model must be slain or flee for the " +
                 "Relic to be dropped).A model carrying the Relic cannot embark in any TRANSPORT, move more than 9\" " +
                 "in any single phase or leave the battlefield.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 0;
             _tacticalMission = false;
             _discard = false;

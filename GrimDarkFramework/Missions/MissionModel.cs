@@ -30,10 +30,10 @@ namespace GrimDarkFramework.Missions
         public int Draws { get { return _mission.CalculateDraws(RoundNum, _player.Count); } }
 
 
-        public MissionModel(MissionEnum m, int army)
+        public MissionModel(MissionDetails m, int army)
         {
             _mission = MissionFactory.CreateMission(m);
-            _player = new Player(army);
+            _player = new Player(army, _mission.TacticalMission);
         }
 
         public void GainSpecialMission(SpecialMissionEnum s)

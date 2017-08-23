@@ -32,10 +32,10 @@ namespace GrimDarkFramework.Missions
         private int _draws;
         public int Draws { get { return _draws; } }
 
-        public MMissionCloak(string type)
+        public MMissionCloak(MissionDetails m)
         {
             _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
-            _name = "Cloak & Shadows";
+            _name = m.MissionName;
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each Objective Marker " +
                 "is not within 6\" of the edge of the battlefield as well as not within 12\" of any other " +
@@ -47,7 +47,7 @@ namespace GrimDarkFramework.Missions
                 "Only reveal Tactical Objectives when they are achieved.\n" +
                 "\nCOVER OF DARKNESS - When rolling to hit in the Shooting Phase, subtract 1 from the roll " +
                 "if the target is more than 18\" away.";
-            _type = type;
+            _type = m.MissionType;
             _startingObj = 3;
             _tacticalMission = true;
             _discard = false;
