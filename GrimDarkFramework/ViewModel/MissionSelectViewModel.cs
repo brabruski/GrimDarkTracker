@@ -1,32 +1,30 @@
 ﻿using GrimDarkFramework.Domain;
 using GrimDarkFramework.Missions;
 using GrimDarkFramework.Model;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GrimDarkFramework.ViewModel
 {
-    class MissionSelectViewModel : INotifyPropertyChanged
+    class MissionSelectViewModel : ViewModelBase
     {
         private XMLDatabase _db;
         private static List<Army> _armies;
         public List<Army> Armies { get { return _armies; } }
-        public ObservableCollection<MissionDetails> MissionList;
-        
+        public List<MissionDetails> MissionList { get { return _missionList; } }
+        public List<MissionSelections> MissionTypes { get { return _missionTypes; } }
+
         public MissionSelectViewModel()
         {
             _db = new XMLDatabase();
             _armies = _db.ArmyList;
-            DataContext = this;
+            _missionList = new List<MissionDetails>();
         }
 
-        int _SelectedMission;
-        public int SelectedMission
+        #region Selected Properties
+        MissionEnum _SelectedMission;
+        public MissionEnum SelectedMission
         {
             get
             {
@@ -59,6 +57,7 @@ namespace GrimDarkFramework.ViewModel
             }
         }
 
+
         int _SelectedMissionType;
         public int SelectedMissionType
         {
@@ -73,19 +72,25 @@ namespace GrimDarkFramework.ViewModel
                     _SelectedMissionType = value;
                     SwitchList(_SelectedMissionType);
                     RaisePropertyChanged("SelectedMissionType");
+                    RaisePropertyChanged("SelectedMission");
+                    
                 }
             }
         }
+#endregion 
 
-        private void SwitchList(int type)
+        //Change MissionList in View Based on Mission Type Selected
+        private void SwitchList(int id)
         {
-            if (type == 1)
-                MissionList = new ObservableCollection<MissionDetails>(_maelstrom);
+            if (id == 1)
+                _missionList = _eternal;
             else
-                MissionList = new ObservableCollection<MissionDetails>(_eternal);
+                _missionList = _maelstrom;
+            RaisePropertyChanged("MissionList");
         }
 
         #region Mission Lists
+        private List<MissionDetails> _missionList;
         private List<MissionDetails> _eternal = new List<MissionDetails>()
         {
             new MissionDetails(MissionEnum.ESecure, "Secure & Control"),
@@ -106,17 +111,13 @@ namespace GrimDarkFramework.ViewModel
             new MissionDetails(MissionEnum.MCleanse, "Cleanse & Capture"),
         };
 
-        public Dictionary<int, string> MissionTypes = new Dictionary<int, string>()
+        private List<MissionSelections> _missionTypes = new List<MissionSelections>()
         {
-            { 1, "Eternal War" },
-            { 2, "Maelstrom of War" }
+            new MissionSelections("Eternal War", 1),
+            new MissionSelections("Maelstrom of War", 2),
         };
-        #endregion Mission Lists
+        #endregion
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        void RaisePropertyChanged(string prop)
-        {
-            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
-        }
+
     }
 }

@@ -22,21 +22,21 @@
             <ComboBox Name="ComboMissionTypeSelect" materialDesign:HintAssist.Hint="Select Mission Type" FontSize="16" materialDesign:HintAssist.IsFloating="True"
                                   MaxDropDownHeight="200"
                                   Margin="8 8 8 8"
-                          SelectedValue="{Binding SelectedMissionType}"
+                          SelectedValue="{Binding SelectedMissionType, Mode=TwoWay}"
                           ItemsSource="{Binding MissionTypes}"
-                          SelectedValuePath="Key"
-                          DisplayMemberPath="Value" />
+                          SelectedValuePath="TypeId"
+                          DisplayMemberPath="TypeName" />
 
             <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}">Select Your Mission:</TextBlock>
             <ComboBox Name="ComboMissionSelect" materialDesign:HintAssist.Hint="Mission Select" FontSize="16" materialDesign:HintAssist.IsFloating="True"
                                   MaxDropDownHeight="200"
                                   Margin="8 8 8 8"
-                      SelectedValue="{Binding SelectedMission}"
+                      SelectedValue="{Binding SelectedMission, Mode=TwoWay}"
                       ItemsSource="{Binding MissionList}"
                       SelectedValuePath="Selector"
                       DisplayMemberPath="MissionName" />
             <TextBlock Margin="10,5,5,0" VerticalAlignment="Center"><Run Text="Selected Mission: "/><Run Text="{Binding SelectedMission}"/></TextBlock>
-            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}">
+            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Sword" />
                     <TextBlock Margin="8 0 0 0">Battle!</TextBlock>

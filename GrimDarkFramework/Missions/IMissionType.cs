@@ -22,5 +22,6 @@ namespace GrimDarkFramework.Model
         bool UpdateDiscard(int roundNum, int currentDeckCount);
         bool DiscardObj(Card card);
         int CalculateDraws(int round, int count);
+        int CalculateDiscards(int round, int count);
     }
 }

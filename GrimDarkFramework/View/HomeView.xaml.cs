@@ -26,9 +26,10 @@ namespace GrimDarkFramework.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new MissionSelectViewModel();
+            Window MainContentWindow = Application.Current.MainWindow;
+            MainContentWindow.DataContext = new MissionSelectViewModel();
         }
     }
 }

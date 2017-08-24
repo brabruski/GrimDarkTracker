@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace GrimDarkFramework.ViewModel
 {
-    class PlayerViewModel : INotifyPropertyChanged
+    class PlayerViewModel : ViewModelBase
     {
 
         private string _armyName;
@@ -31,14 +31,14 @@ namespace GrimDarkFramework.ViewModel
             _armyName = player.GetArmyName();
             _round = player.Round;
             _vp = player.VPoints;
+            _discards = player.Discards;
+            _draws = player.Draws;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private Action<PropertyChangedEventArgs> RaisePropertyChanged()
+        public void UpdatePlayerView(string name)
         {
-            return args => PropertyChanged?.Invoke(this, args);
-        }
+            RaisePropertyChanged(name);
+        }        
     }
 }
 

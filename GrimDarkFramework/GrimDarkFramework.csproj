@@ -106,11 +106,12 @@
     <Compile Include="Missions\EMissionRelic.cs" />
     <Compile Include="Missions\EMissionScour.cs" />
     <Compile Include="Missions\EMissionSecure.cs" />
-    <Compile Include="Missions\MissionModel.cs" />
+    <Compile Include="Missions\MissionBase.cs" />
     <Compile Include="Missions\MissionEnum.cs" />
     <Compile Include="Missions\MissionFactory.cs" />
     <Compile Include="Missions\EMissionRetrieval.cs" />
     <Compile Include="Missions\MissionDetails.cs" />
+    <Compile Include="Missions\MissionSelections.cs" />
     <Compile Include="Missions\MMissionCleanse.cs" />
     <Compile Include="Missions\MMissionCloak.cs" />
     <Compile Include="Missions\MMissionContact.cs" />
@@ -126,8 +127,10 @@
     <Compile Include="ViewModel\BooleanVisibilityConverter.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MissionSelectEventArgs.cs" />
     <Compile Include="ViewModel\MissionSelectViewModel.cs" />
     <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>

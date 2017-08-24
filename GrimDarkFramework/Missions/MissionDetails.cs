@@ -27,10 +27,10 @@ namespace GrimDarkFramework.Missions
 
         private void TypeSelect(MissionEnum m)
         {
-            if ((int)m <= 6)
-                _missionType = _eternal;
-            else
+            if ((int)m > 6)
                 _missionType = _maelstrom;
+            else
+                _missionType = _eternal;
         }
     }
 }

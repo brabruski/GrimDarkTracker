@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.ViewModel
 {
-    class AboutViewModel
+    class AboutViewModel : ViewModelBase
     {
     }
 }

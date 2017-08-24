@@ -20,7 +20,7 @@
 
             <StackPanel Grid.Column="1" Margin="24 0 0 0" VerticalAlignment="Center">
                 <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap">Welcome to the Grim Dark Tracker</TextBlock>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click">
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="StartButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Sword" />
                         <TextBlock Margin="8 0 0 0">Start A Battle!</TextBlock>

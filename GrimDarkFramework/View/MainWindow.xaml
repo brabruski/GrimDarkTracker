@@ -15,60 +15,54 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="Caslon Antique"
         Background="{DynamicResource MaterialDesignPaper}">
-<!--
+    <!--
     Set up associations for files in folders. Whenever you use the name, it will automatically point to the folder
     xmlns:viewmodels="clr-namespace:GrimDarkUI.ViewModels"
     xmlns:usercontrols="clr-namespace:GrimDarkUI.UserControls" 
     -->
 
-<Window.Resources>
-    <DataTemplate x:Name="HomeViewTemplate" DataType="{x:Type viewmodel:HomeViewModel}">
-        <view:HomeView DataContext="{Binding}" />
-    </DataTemplate>
-    <DataTemplate x:Name="MissionSelectViewTemplate" DataType="{x:Type viewmodel:MissionSelectViewModel}">
-        <view:MissionSelectView DataContext="{Binding}" />
-    </DataTemplate>
-    <DataTemplate x:Name="CardViewTemplate" DataType="{x:Type viewmodel:CardViewModel}">
-        <view:CardView DataContext="{Binding}" />
-    </DataTemplate>
-    <DataTemplate x:Name="AboutViewTemplate" DataType="{x:Type viewmodel:AboutViewModel}">
-        <view:AboutView DataContext="{Binding}" />
-    </DataTemplate>
-        <DataTemplate x:Name="BattleViewTemplate" DataType="{x:Type viewmodel:BattleViewModel}">
-            <view:BattleView DataContext="{Binding}" />
+    <Window.Resources>
+        <DataTemplate x:Name="HomeViewTemplate" DataType="{x:Type viewmodel:HomeViewModel}">
+            <view:HomeView/>
         </DataTemplate>
+        <DataTemplate x:Name="MissionSelectViewTemplate" DataType="{x:Type viewmodel:MissionSelectViewModel}">
+            <view:MissionSelectView/>
+        </DataTemplate>
+        <DataTemplate x:Name="AboutViewTemplate" DataType="{x:Type viewmodel:AboutViewModel}">
+            <view:AboutView DataContext="{Binding}" />
+        </DataTemplate>        
     </Window.Resources>
 
-<DockPanel>
-    <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+    <DockPanel>
+        <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
                                             Mode="PrimaryMid" DockPanel.Dock="Top">
-        <DockPanel>
-            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
-                <StackPanel>
-                    <Button Content="New Battle" />
-                    <Button Content="Save Battle" />
-                    <Button Content="Continue Battle" />
-                    <Separator/>
-                    <Button Content="About" />
-                    <Button Content="Help" />
-                    <Separator/>
-                    <Button Content="Exit" />
-                </StackPanel>
-            </materialDesign:PopupBox>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#DDFFFFFF">Grim Dark Victory Point Tracker</TextBlock>
-        </DockPanel>
-    </materialDesign:ColorZone>
+            <DockPanel>
+                <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
+                    <StackPanel>
+                        <Button Content="New Battle" Click="MissionSelectView_Clicked"/>
+                        <Button Content="Save Battle" IsEnabled="false" />
+                        <Button Content="Continue Battle" IsEnabled="false" />
+                        <Separator/>
+                        <Button Content="About" IsEnabled="false"/>
+                        <Button Content="Help" IsEnabled="false"/>
+                        <Separator/>
+                        <Button Content="Exit" IsEnabled="false"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#DDFFFFFF">Grim Dark Victory Point Tracker</TextBlock>
+            </DockPanel>
+        </materialDesign:ColorZone>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <ScrollViewer Grid.Row="1">
-            <ContentControl Content="{Binding}"/>
-        </ScrollViewer>
-    </Grid>
-</DockPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollViewer Grid.Row="1">
+                <ContentControl x:Name="MainContentWindow" Content="{Binding}"/>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
 
 </Window>
 
