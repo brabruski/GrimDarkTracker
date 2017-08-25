@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Cards>
+  <Card>
+    <CardId>1</CardId>
+    <CardName>Secure Objective 1</CardName>
+    <CardNum>11</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 1 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>2</CardId>
+    <CardName>Secure Objective 2</CardName>
+    <CardNum>12</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 2 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>3</CardId>
+    <CardName>Secure Objective 3</CardName>
+    <CardNum>13</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 3 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>4</CardId>
+    <CardName>Secure Objective 4</CardName>
+    <CardNum>14</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 4 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>5</CardId>
+    <CardName>Secure Objective 5</CardName>
+    <CardNum>15</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 5 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>6</CardId>
+    <CardName>Secure Objective 6</CardName>
+    <CardNum>16</CardNum>
+    <CardTypeId>1</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 6 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>7</CardId>
+    <CardName>Secure Objective 1</CardName>
+    <CardNum>21</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 1 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>8</CardId>
+    <CardName>Secure Objective 2</CardName>
+    <CardNum>22</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 2 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>9</CardId>
+    <CardName>Secure Objective 3</CardName>
+    <CardNum>23</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 3 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>10</CardId>
+    <CardName>Secure Objective 4</CardName>
+    <CardNum>24</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 4 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>11</CardId>
+    <CardName>Secure Objective 5</CardName>
+    <CardNum>25</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 5 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>12</CardId>
+    <CardName>Secure Objective 6</CardName>
+    <CardNum>26</CardNum>
+    <CardTypeId>2</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you control Objective Marker 6 at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>13</CardId>
+    <CardName>Defend Objective 1</CardName>
+    <CardNum>31</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 1 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>14</CardId>
+    <CardName>Defend Objective 2</CardName>
+    <CardNum>32</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 2 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>15</CardId>
+    <CardName>Defend Objective 3</CardName>
+    <CardNum>33</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 3 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>16</CardId>
+    <CardName>Defend Objective 4</CardName>
+    <CardNum>34</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 4 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>17</CardId>
+    <CardName>Defend Objective 5</CardName>
+    <CardNum>35</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 5 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>18</CardId>
+    <CardName>Defend Objective 6</CardName>
+    <CardNum>36</CardNum>
+    <CardTypeId>3</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 2 Victory Points if you control Objective Marker 6 at the end of two consecutive turns.</CardDescrip>
+    <CardMinVP>2</CardMinVP>
+    <CardMaxVP>2</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>19</CardId>
+    <CardName>Advance</CardName>
+    <CardNum>41</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if no unit from your army is within your deployment zone at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>20</CardId>
+    <CardName>Behind Enemy Lines</CardName>
+    <CardNum>42</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you have at least one unit completely within the enemy's deployment zone at the end of your turn. If you have at least three units within your opponent's deployment zone at the end of your turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>21</CardId>
+    <CardName>Hold the Line</CardName>
+    <CardNum>43</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you have at least three units completely within your deployment zone and your opponent has no models within your deployment zone, at the end of your turn. This objective cannot be achieved of your first turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>22</CardId>
+    <CardName>Mission Critical Objective</CardName>
+    <CardNum>44</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>When this Tactical Objective is generated, roll a D6. Score 1 Victory Point if you control the corresponding Objective Marker. If the corresponding Objective Marker was controlled by your opponent at the start of your turn and you control it at the end of your turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>23</CardId>
+    <CardName>Supremacy</CardName>
+    <CardNum>45</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score D3 Victory Points if you control any three Objective Markers at the end of your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>24</CardId>
+    <CardName>Domination</CardName>
+    <CardNum>46</CardNum>
+    <CardTypeId>4</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score D3+3 Victory Points if you control every Objective Marker on the battlefield at the end of your turn.</CardDescrip>
+    <CardMinVP>4</CardMinVP>
+    <CardMaxVP>6</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>25</CardId>
+    <CardName>Overwhelming Firepower</CardName>
+    <CardNum>51</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if an enemy unit was destroyed during the Shooting Phase of your turn. If three or more enemy units were destroyed during the Shooting Phase of your turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>26</CardId>
+    <CardName>Blood And Guts</CardName>
+    <CardNum>52</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if an enemy unit was destroyed during the Fight Phase of this turn. If between three or more enemy units were destroyed during your turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>27</CardId>
+    <CardName>No Prisoners</CardName>
+    <CardNum>53</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if an enemy unit was destroyed during your turn. If between three and five enemy units were destroyed during your turn, score D3 Victory Points instead. If six or more enemy units were destroyed during your turn, score D3+3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>6</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>28</CardId>
+    <CardName>Area Denial</CardName>
+    <CardNum>54</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if there are no enemy models within 6" of the centre of the battlefield at the end of your turn. If there are no enemy models within 12" of the centre of the battlefield at the end of your turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>29</CardId>
+    <CardName>Psychological Warfare</CardName>
+    <CardNum>55</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if your opponent failed a Morale Test during this turn. If your opponent failed three or more Morale Tests, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>30</CardId>
+    <CardName>Master the Warp</CardName>
+    <CardNum>56</CardNum>
+    <CardTypeId>5</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if you manifested or denied a psychic power during this turn. If you manifested or denied three or more psychic powers, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>31</CardId>
+    <CardName>Kingslayer</CardName>
+    <CardNum>61</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score D3 Victory Points if your opponent's Warlord has been destroyed during this or any previous turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>32</CardId>
+    <CardName>Witch Hunter</CardName>
+    <CardNum>62</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if at least one enemy PSYKER was destroyed during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>true</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>33</CardId>
+    <CardName>Scour the Skies</CardName>
+    <CardNum>63</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if at least one enemy unit that can FLY was destroyed during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>true</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>34</CardId>
+    <CardName>Assassinate</CardName>
+    <CardNum>64</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if at least one enemy CHARACTER was destroyed during this turn. If three or more enemy CHARACTERS were destroyed during this turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>35</CardId>
+    <CardName>Big Game Hunter</CardName>
+    <CardNum>65</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>Score 1 Victory Point if at least one enemy unit with a Wounds characteristic of 10 or more was destroyed during this turn. If at least one enemy unit with a Wounds characteristic of 20 or more was destroyed during this turn, score D3 Victory Points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>true</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>36</CardId>
+    <CardName>Priority Orders Received</CardName>
+    <CardNum>66</CardNum>
+    <CardTypeId>6</CardTypeId>
+    <ArmyId>1</ArmyId>
+    <CardDescrip>When this Tactical Objective is generated, immediately generate a bonus Tactical Objective - this does not count towards the number of Active Tactical Objectives you currently have in play. Your Warlord is the only unit that can be used to achieve the bonus Tactical Objective - they must be the only unit used to control an objective, the unit that destroys the last model in an enemy unit and so on. If you achieve this, you score both the number of Victory Points stated on the bonus Tactical Objective and an additional 3 Victory Points. If this Tactical Objective is discarded, so too is the bonus Tactical Objective.</CardDescrip>
+    <CardMinVP>3</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>true</BonusObj>
+  </Card>
+</Cards>

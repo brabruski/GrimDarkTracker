@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GrimDarkUI"
-        xmlns:viewmodel="clr-namespace:GrimDarkUI.ViewModels"
-        xmlns:usercontrol="clr-namespace:GrimDarkUI.UserControls"
+        xmlns:viewmodel="clr-namespace:GrimDarkUI.ViewModel"
+        xmlns:view="clr-namespace:GrimDarkUI.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="grimdark tracker" Height="600" Width="825"
@@ -35,6 +35,9 @@
             <usercontrol:About DataContext="{Binding}" />
         </DataTemplate>
     </Window.Resources>
+    <Window.DataContext>
+        <viewmodel:MainContainerViewModel/>
+    </Window.DataContext>
 
     <DockPanel>
         <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
@@ -63,7 +66,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ScrollViewer Grid.Row="1">
-                <ContentControl x:Name="MainWindowLink" Content="{Binding}">
+                <ContentControl x:Name="MainWindowLink" Content="{Binding GameWindow}">
                 </ContentControl>
             </ScrollViewer>
         </Grid>

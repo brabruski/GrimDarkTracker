@@ -1,13 +1,15 @@
-﻿using GrimDarkFramework.Domain;
-using GrimDarkFramework.Missions;
-using GrimDarkFramework.Model;
+﻿using GrimDarkTracker.Domain;
+using GrimDarkTracker.Models;
+using GrimDarkTracker.Models.MissionModels;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace GrimDarkFramework.ViewModel
+namespace GrimDarkTracker.ViewModels
 {
-    class MissionSelectViewModel : ViewModelBase
+    class BattleSelectViewModel : BaseViewModel
     {
         private XMLDatabase _db;
         private static List<Army> _armies;
@@ -15,12 +17,13 @@ namespace GrimDarkFramework.ViewModel
         public List<MissionDetails> MissionList { get { return _missionList; } }
         public List<MissionSelections> MissionTypes { get { return _missionTypes; } }
 
-        public MissionSelectViewModel()
+        public BattleSelectViewModel(MainViewModel main) : base(main)
         {
             _db = new XMLDatabase();
             _armies = _db.ArmyList;
             _missionList = new List<MissionDetails>();
         }
+
 
         #region Selected Properties
         MissionEnum _SelectedMission;
@@ -57,7 +60,6 @@ namespace GrimDarkFramework.ViewModel
             }
         }
 
-
         int _SelectedMissionType;
         public int SelectedMissionType
         {
@@ -73,7 +75,7 @@ namespace GrimDarkFramework.ViewModel
                     SwitchList(_SelectedMissionType);
                     RaisePropertyChanged("SelectedMissionType");
                     RaisePropertyChanged("SelectedMission");
-                    
+
                 }
             }
         }
@@ -117,7 +119,5 @@ namespace GrimDarkFramework.ViewModel
             new MissionSelections("Maelstrom of War", 2),
         };
         #endregion
-
-
     }
 }

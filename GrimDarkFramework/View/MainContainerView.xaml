@@ -1,28 +1,30 @@
-﻿<Window x:Class="GrimDarkFramework.View.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewmodel="clr-namespace:GrimDarkFramework.ViewModel"
-        xmlns:view="clr-namespace:GrimDarkFramework.View"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-        Title="grimdark tracker" Height="600" Width="825"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"
-        FontFamily="Caslon Antique"
-        Background="{DynamicResource MaterialDesignPaper}">
-    <!--
-    Set up associations for files in folders. Whenever you use the name, it will automatically point to the folder
-    xmlns:viewmodels="clr-namespace:GrimDarkUI.ViewModels"
-    xmlns:usercontrols="clr-namespace:GrimDarkUI.UserControls" 
-    -->    
-    <Window.DataContext>
-        <viewmodel:MainContainerViewModel/>
-    </Window.DataContext>
+﻿<UserControl x:Class="GrimDarkFramework.View.MainContainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:GrimDarkFramework.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:viewmodel="clr-namespace:GrimDarkFramework.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="825">
+   
+    <UserControl.Resources>
+        <DataTemplate x:Name="HomeViewTemplate" DataType="{x:Type viewmodel:HomeViewModel}">
+            <view:HomeView/>
+        </DataTemplate>
+        <DataTemplate x:Name="MissionSelectViewTemplate" DataType="{x:Type viewmodel:MissionSelectViewModel}">
+            <view:MissionSelectView/>
+        </DataTemplate>
+        <DataTemplate x:Name="AboutViewTemplate" DataType="{x:Type viewmodel:AboutViewModel}">
+            <view:AboutView DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate x:Name="PlayerViewTemplate" DataType="{x:Type viewmodel:PlayerViewModel}">
+            <view:AboutView DataContext="{Binding}" />
+        </DataTemplate>
+    </UserControl.Resources>   
+
+
     <DockPanel>
         <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
                                             Mode="PrimaryMid" DockPanel.Dock="Top">
@@ -52,6 +54,7 @@
                 <ContentControl x:Name="MainContentWindow" Content="{Binding ContainerView}"/>
             </ScrollViewer>
         </Grid>
-    </DockPanel>    
-</Window>
+    </DockPanel>
+</UserControl>
+
 

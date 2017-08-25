@@ -1,5 +1,4 @@
-﻿using GrimDarkFramework.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GrimDarkFramework.View
+namespace GrimDarkTracker.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +22,6 @@ namespace GrimDarkFramework.View
         public MainWindow()
         {
             InitializeComponent();
-        }    
+        }
     }
 }

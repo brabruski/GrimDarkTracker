@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CardTypes>
+  <CardType>
+    <CardTypeId>1</CardTypeId>
+    <CardTypeName>Capture &amp; Control</CardTypeName>
+  </CardType>
+  <CardType>
+    <CardTypeId>2</CardTypeId>
+    <CardTypeName>Take &amp; Hold</CardTypeName>
+  </CardType>
+  <CardType>
+    <CardTypeId>3</CardTypeId>
+    <CardTypeName>Storm &amp; Defend</CardTypeName>
+  </CardType>
+  <CardType>
+    <CardTypeId>4</CardTypeId>
+    <CardTypeName>Seize Ground</CardTypeName>
+  </CardType>
+  <CardType>
+    <CardTypeId>5</CardTypeId>
+    <CardTypeName>Purge</CardTypeName>
+  </CardType>
+  <CardType>
+    <CardTypeId>6</CardTypeId>
+    <CardTypeName>Annihilation</CardTypeName>
+  </CardType>
+</CardTypes>
+
+
+
+
+
+
+
+
