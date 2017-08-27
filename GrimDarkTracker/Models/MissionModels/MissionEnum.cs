@@ -1,6 +1,6 @@
 ﻿namespace GrimDarkTracker.Models.MissionModels
 {
-    enum MissionEnum
+    public enum MissionEnum
     {
         ERetrieve = 1,
         EMercy,

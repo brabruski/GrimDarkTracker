@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GrimDarkUI"
-        xmlns:viewmodel="clr-namespace:GrimDarkUI.ViewModel"
-        xmlns:view="clr-namespace:GrimDarkUI.View"
+        xmlns:viewmodel="clr-namespace:GrimDarkUI.ViewModels"
+        xmlns:usercontrol="clr-namespace:GrimDarkUI.UserControls"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="grimdark tracker" Height="600" Width="825"
@@ -36,9 +36,8 @@
         </DataTemplate>
     </Window.Resources>
     <Window.DataContext>
-        <viewmodel:MainContainerViewModel/>
+        <viewmodel:HomeViewModel/>
     </Window.DataContext>
-
     <DockPanel>
         <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
                                             Mode="PrimaryMid" DockPanel.Dock="Top">
@@ -46,14 +45,13 @@
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
                     <StackPanel>
                         <Button Content="New Battle" Click="MissionSelectView_Clicked"/>
-                        <Button Content="Save Battle" />
-                        <Button Content="Continue Battle" Click="CardView_Clicked"/>
+                        <Button Content="Save Battle" IsEnabled="false" />
+                        <Button Content="Continue Battle" IsEnabled="false" />
                         <Separator/>
-                        <Button Content="About" Click="AboutView_Clicked"/>
-                        
-                        <Button Content="Help" />
+                        <Button Content="About" IsEnabled="false"/>
+                        <Button Content="Help" IsEnabled="false"/>
                         <Separator/>
-                        <Button Content="Exit" />
+                        <Button Content="Exit" IsEnabled="false"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#DDFFFFFF">Grim Dark Victory Point Tracker</TextBlock>
@@ -66,10 +64,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ScrollViewer Grid.Row="1">
-                <ContentControl x:Name="MainWindowLink" Content="{Binding GameWindow}">
-                </ContentControl>
+                <ContentControl x:Name="MainContentWindow" Content="{Binding ContainerView}"/>
             </ScrollViewer>
         </Grid>
     </DockPanel>
-
 </Window>

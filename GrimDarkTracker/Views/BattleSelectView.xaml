@@ -34,7 +34,10 @@
                       SelectedValuePath="Selector"
                       DisplayMemberPath="MissionName" />
             <TextBlock Margin="10,5,5,0" VerticalAlignment="Center"><Run Text="Selected Mission: "/><Run Text="{Binding SelectedMission}"/></TextBlock>
-            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}">
+            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                    Command="{Binding SwitchToBattle}"
+                    CommandParameter="{Binding RelayParam}">
+
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Sword" />
                     <TextBlock Margin="8 0 0 0">Battle!</TextBlock>

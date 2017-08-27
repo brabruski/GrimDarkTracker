@@ -2,12 +2,14 @@
 
 namespace GrimDarkTracker.ViewModels
 {
-    class ObservableViewModel : INotifyPropertyChanged
+    public class ObservableViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void RaisePropertyChanged(string prop)
+
+        protected void RaisePropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
-        }
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }        
     }
 }

@@ -99,9 +99,11 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\PointRange.cs" />
     <Compile Include="Models\RelayCommand.cs" />
+    <Compile Include="Models\RelayMission.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\BattleSelectViewModel.cs" />
+    <Compile Include="ViewModels\BattleViewModel.cs" />
     <Compile Include="ViewModels\BooleanNotConverter.cs" />
     <Compile Include="ViewModels\BooleanVisibilityConverter.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -112,6 +114,9 @@
     </Compile>
     <Compile Include="Views\BattleSelectView.xaml.cs">
       <DependentUpon>BattleSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BattleView.xaml.cs">
+      <DependentUpon>BattleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -154,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BattleSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BattleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

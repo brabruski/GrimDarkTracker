@@ -31,7 +31,7 @@
             <DockPanel>
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#DDFFFFFF">
                     <StackPanel>
-                        <Button Content="New Battle" Click="MissionSelectView_Clicked"/>
+                        <Button Content="New Battle" />
                         <Button Content="Save Battle" IsEnabled="false" />
                         <Button Content="Continue Battle" IsEnabled="false" />
                         <Separator/>

@@ -22,6 +22,9 @@
             <DataTemplate x:Name="battleSelectViewTemplate" DataType="{x:Type viewmodels:BattleSelectViewModel}">
                 <views:BattleSelectView DataContext="{Binding}"/>
             </DataTemplate>
+            <DataTemplate x:Name="battleViewTemplate" DataType="{x:Type viewmodels:BattleViewModel}">
+                <views:BattleView DataContext="{Binding}"/>
+            </DataTemplate>            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

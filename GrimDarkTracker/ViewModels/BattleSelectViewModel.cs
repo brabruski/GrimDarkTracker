@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace GrimDarkTracker.ViewModels
 {
@@ -16,63 +18,88 @@ namespace GrimDarkTracker.ViewModels
         public List<Army> Armies { get { return _armies; } }
         public List<MissionDetails> MissionList { get { return _missionList; } }
         public List<MissionSelections> MissionTypes { get { return _missionTypes; } }
+        private MissionDetails _missionDetails;
+        private RelayMission _relayParam;
+        public RelayMission RelayParam { get { return _relayParam; } }
+
+        //Relay command to call 'ToBattleSelect' function
+        public RelayCommand<RelayMission> SwitchToBattle { get; private set; }
 
         public BattleSelectViewModel(MainViewModel main) : base(main)
         {
             _db = new XMLDatabase();
             _armies = _db.ArmyList;
             _missionList = new List<MissionDetails>();
+            _missionDetails = new MissionDetails();
+            _relayParam = new RelayMission(main, _missionDetails, 1);
+            _selectedArmy = 1;
+            SwitchToBattle = new RelayCommand<RelayMission>(ToBattle, ValidSelections);
         }
 
-
         #region Selected Properties
-        MissionEnum _SelectedMission;
+        MissionEnum _selectedMission;
         public MissionEnum SelectedMission
         {
             get
             {
-                return _SelectedMission;
+                return _selectedMission;
             }
             set
             {
-                if (_SelectedMission != value)
+                if (_selectedMission != value)
                 {
-                    _SelectedMission = value;
+                    _selectedMission = value;
+                    _missionDetails.Selector = value;
+                    _missionDetails.MissionName = ReturnMissionName(value);
+                    RelayParam.MDetails = _missionDetails;
                     RaisePropertyChanged("SelectedMission");
                 }
             }
         }
 
-        int _SelectedArmy;
+        private string ReturnMissionName(MissionEnum m)
+        {
+            foreach (MissionDetails t in _missionList)
+            {
+                if (m == t.Selector)
+                    return t.MissionName;
+            }
+            return "";
+        }
+
+        int _selectedArmy;
         public int SelectedArmy
         {
             get
             {
-                return _SelectedArmy;
+                return _selectedArmy;
             }
             set
             {
-                if (_SelectedArmy != value)
+                if (_selectedArmy != value)
                 {
-                    _SelectedArmy = value;
+                    _selectedArmy = value;
+                    RelayParam.ArmyId = _selectedArmy;
                     RaisePropertyChanged("SelectedArmy");
                 }
             }
         }
 
-        int _SelectedMissionType;
+        int _selectedMissionType;
         public int SelectedMissionType
         {
             get
             {
-                return _SelectedMissionType;
+                return _selectedMissionType;
             }
             set
             {
-                if (_SelectedMissionType != value)
+                if (_selectedMissionType != value)
                 {
-                    _SelectedMissionType = value;
-                    SwitchList(_SelectedMissionType);
+                    _selectedMissionType = value;
+                    _missionDetails.TypeSelect(_selectedMission);
+                    SwitchList(_selectedMissionType);
+                    _selectedMission = 0;
                     RaisePropertyChanged("SelectedMissionType");
                     RaisePropertyChanged("SelectedMission");
 
@@ -119,5 +146,24 @@ namespace GrimDarkTracker.ViewModels
             new MissionSelections("Maelstrom of War", 2),
         };
         #endregion
+
+        //Calling ViewModel function. Passed ViewModel Type
+        public void ToBattle(RelayMission param)
+        {
+            Navigate<BattleViewModel>(param);
+        }
+
+        public bool ValidSelections(RelayMission param)
+        {
+            if (param != null)
+            {
+                string tempMission = param.MDetails.MissionName;
+                if (tempMission == "" || tempMission == "No Mission Selected")
+                    return false;
+            }
+            return true;
+        }
+
+
     }
 }

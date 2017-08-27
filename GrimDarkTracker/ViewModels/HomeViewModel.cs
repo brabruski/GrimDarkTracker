@@ -21,7 +21,7 @@ namespace GrimDarkTracker.ViewModels
 
         }        
 
-        //Calling BaseViewModel function. Passed BaseViewModel Type
+        //Calling ViewModel function. Passed ViewModel Type
         public void ToBattleSelect(object param)
         {
             Navigate<BattleSelectViewModel>();
