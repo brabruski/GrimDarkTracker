@@ -35,13 +35,14 @@
                     TypeSelect(_selector);
             }
         }
+        public const string PlaceHolderMissionName = "No Mission Selected";
 
-        private string _eternal = "Eternal War";
-        private string _maelstrom = "Maelstrom of War";
+        public const string Eternal = "Eternal War";
+        public const string Maelstrom = "Maelstrom of War";
 
         public MissionDetails()
         {
-            _missionName = "No Mission Selected";
+            _missionName = PlaceHolderMissionName;
             _selector = MissionEnum.EMercy;
             TypeSelect(_selector);
         }
@@ -56,9 +57,9 @@
         public void TypeSelect(MissionEnum m)
         {
             if ((int)m > 6)
-                _missionType = _maelstrom;
+                _missionType = Maelstrom;
             else
-                _missionType = _eternal;
+                _missionType = Eternal;
         }
     }
 }

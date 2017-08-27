@@ -51,8 +51,8 @@ namespace GrimDarkTracker.ViewModels
                     _selectedMission = value;
                     _missionDetails.Selector = value;
                     _missionDetails.MissionName = ReturnMissionName(value);
-                    RelayParam.MDetails = _missionDetails;
                     RaisePropertyChanged("SelectedMission");
+                    RaisePropertyChanged("MissionList");
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace GrimDarkTracker.ViewModels
                 if (m == t.Selector)
                     return t.MissionName;
             }
-            return "";
+            return MissionDetails.PlaceHolderMissionName;
         }
 
         int _selectedArmy;
@@ -96,9 +96,9 @@ namespace GrimDarkTracker.ViewModels
             {
                 if (_selectedMissionType != value)
                 {
-                    _selectedMissionType = value;
-                    _missionDetails.TypeSelect(_selectedMission);
+                    _selectedMissionType = value;                    
                     SwitchList(_selectedMissionType);
+                    _missionDetails.TypeSelect(_selectedMission);
                     _selectedMission = 0;
                     RaisePropertyChanged("SelectedMissionType");
                     RaisePropertyChanged("SelectedMission");
@@ -116,6 +116,7 @@ namespace GrimDarkTracker.ViewModels
             else
                 _missionList = _maelstrom;
             RaisePropertyChanged("MissionList");
+            RaisePropertyChanged("SelectedMission");
         }
 
         #region Mission Lists
@@ -142,8 +143,8 @@ namespace GrimDarkTracker.ViewModels
 
         private List<MissionSelections> _missionTypes = new List<MissionSelections>()
         {
-            new MissionSelections("Eternal War", 1),
-            new MissionSelections("Maelstrom of War", 2),
+            new MissionSelections(MissionDetails.Eternal, 1),
+            new MissionSelections(MissionDetails.Maelstrom, 2),
         };
         #endregion
 
@@ -158,9 +159,12 @@ namespace GrimDarkTracker.ViewModels
             if (param != null)
             {
                 string tempMission = param.MDetails.MissionName;
-                if (tempMission == "" || tempMission == "No Mission Selected")
+                MissionEnum tempEnum = param.MDetails.Selector;
+                if (tempEnum == 0 || tempMission == MissionDetails.PlaceHolderMissionName)
                     return false;
             }
+            if (param == null || _selectedMission == 0)
+                return false;
             return true;
         }
 
