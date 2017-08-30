@@ -8,10 +8,14 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <viewmodel:BooleanVisibilityConverter x:Key="visibilityConverter"/>
+        <viewmodel:BooleanNotConverter x:Key="booleanConverter" />
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="6*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -26,8 +30,10 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" >
                 <StackPanel Orientation="Horizontal" Margin="10 0 0 0" HorizontalAlignment="Right">
                     <TextBlock VerticalAlignment="Center">First Blood</TextBlock>
-                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
-                          ToolTip="First Blood Special Mission">
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0"
+                                  x:Name="FirstBlood"
+                                  ToolTip="First Blood Special Mission"
+                                  IsChecked="{Binding FirstBlood}">
                         <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
                         <materialDesign:ToggleButtonAssist.OnContent>
                             <materialDesign:PackIcon Kind="PlusOne"/>
@@ -36,8 +42,10 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="20 0 0 0" HorizontalAlignment="Right">
                     <TextBlock VerticalAlignment="Center">Slay the Warlord</TextBlock>
-                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
-                          ToolTip="Slay the Warlord Special Mission">
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0"
+                                  x:Name="SlayWar"
+                                  ToolTip="Slay the Warlord Special Mission"
+                                  IsChecked="{Binding SlayWar}">
                         <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
                         <materialDesign:ToggleButtonAssist.OnContent>
                             <materialDesign:PackIcon Kind="PlusOne"/>
@@ -46,8 +54,10 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="20 0 0 0" HorizontalAlignment="Right">
                     <TextBlock VerticalAlignment="Center">Line Breaker</TextBlock>
-                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
-                          ToolTip="Line Breaker Special Mission">
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0"
+                                  x:Name="LineBreak"
+                                  ToolTip="Line Breaker Special Mission"
+                                  IsChecked="{Binding LineBreak}">
                         <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
                         <materialDesign:ToggleButtonAssist.OnContent>
                             <materialDesign:PackIcon Kind="PlusOne"/>
@@ -55,17 +65,29 @@
                     </ToggleButton>
                 </StackPanel>
                 <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                    Margin="30 0"
-                    Width="Auto"
-                    ToolTip="Gain 1 Victory Point for Destroying a Unit"
-                    materialDesign:RippleAssist.Feedback="#DD000000"
-                    HorizontalAlignment="Right">Score Kill Point</Button>
+                        Margin="30 0"
+                        Width="Auto"
+                        ToolTip="Gain 1 Victory Point for Destroying a Unit"
+                        Command="{Binding AddKPoint}"
+                        Visibility="{Binding KPAvailable, Converter={StaticResource visibilityConverter}}"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        HorizontalAlignment="Right">Score Kill Point</Button>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Margin="30 0"
+                        Width="Auto"
+                        ToolTip="Draw a Tactical Objective Card"
+                        Command="{Binding DrawACard}"
+                        Visibility="{Binding IsTactical, Converter={StaticResource visibilityConverter}}"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        HorizontalAlignment="Right">Draw A Card</Button>
                 <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                    Margin="30 0"
-                    Width="Auto"
-                    ToolTip="End the Round"
-                    materialDesign:RippleAssist.Feedback="#DD000000"
-                    HorizontalAlignment="Right">End Round</Button>
+                        Margin="10 0"
+                        Width="Auto"
+                        ToolTip="End the Round" 
+                        Command="{Binding AddRound}"                        
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        HorizontalAlignment="Right">End Round
+                </Button>
             </StackPanel>
         </materialDesign:ColorZone>
         

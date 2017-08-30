@@ -12,18 +12,21 @@ namespace GrimDarkTracker.Models
         public int Discards { get; set; }
         public int Draws { get; set; }
 
-        public int specialVPoints = 0;
+        public int SpecialVPoints { get; set; }
         private int _vpoints;
-        public int VPoints { get { return _vpoints + specialVPoints; } }
+        public int VPoints { get; set; }
         private Deck _inPlayDeck;        
-        public ObservableCollection<Card> InPlayDeck { get; private set;}
+        public ObservableCollection<Card> InPlayDeck { get; set; }
+
         private Deck _tacticalDeck;
-        public ObservableCollection<Card> TacticalDeck { get; private set; }
-        public int Count { get { return _inPlayDeck.Count; } }
+        public ObservableCollection<Card> TacticalDeck { get; set;}
+
+        public int Count { get; set; }
         public string ArmyName { get; private set;}
 
         public Player(int armyId, bool isTactical)
         {
+            SpecialVPoints = 0;
             _round = 1;
             _vpoints = 0;
             _inPlayDeck = new Deck();
@@ -32,6 +35,17 @@ namespace GrimDarkTracker.Models
             InPlayDeck = _inPlayDeck.TacticalDeck();
             TacticalDeck = _tacticalDeck.TacticalDeck();            
             ArmyName = _tacticalDeck.Peek(0).ArmyName;
+            Count = _inPlayDeck.CountCards();
+        }
+
+        public void UpdateSpecialPoints()
+        {
+            VPoints = _vpoints + SpecialVPoints;
+        }
+
+        public void UpdateAll()
+        {
+            _inPlayDeck.CountCards();
         }
 
         public void AddPoints(int p)
@@ -46,7 +60,7 @@ namespace GrimDarkTracker.Models
 
         public void Deal()
         {
-            _inPlayDeck.Add(_tacticalDeck.Deal());            
+            _inPlayDeck.Add(_tacticalDeck.Deal());          
         }        
 
         public string GetArmyName()

@@ -11,13 +11,7 @@ namespace GrimDarkTracker.Models
     {
         private ObservableCollection<Card> _tacticalDeck;
         
-        private Random random = new Random();
-        public int Count {
-            get
-            {
-                if (_tacticalDeck == null)
-                    return 0;
-                return _tacticalDeck.Count(); } }
+        private Random random = new Random();       
 
         //Constructor Depending on saved files or new decks
         public Deck()
@@ -35,6 +29,14 @@ namespace GrimDarkTracker.Models
         public ObservableCollection<Card> TacticalDeck()
         {
             return _tacticalDeck;
+        }
+
+        public int CountCards()
+        {
+
+            if (_tacticalDeck == null)
+                return 0;
+            return _tacticalDeck.Count();
         }
 
         //Allows you to see a card without dealing it

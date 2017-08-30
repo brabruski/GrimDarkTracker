@@ -13,51 +13,75 @@ namespace GrimDarkTracker.ViewModels
         private int _armyId;
         public PlayerInfoViewModel PInfo { get; private set; }
 
-        public BattleViewModel(RelayMission m) : base(m)
-        {
-            _details = m.MDetails;
-            _armyId = m.ArmyId;
-            _battle = MissionFactory.CreateMission(_details);
-            _player = new Player(m.ArmyId, _battle.TacticalMission);
-            PInfo = new PlayerInfoViewModel(m.ViewModel, _player, _battle);            
-        }
+        public bool KPAvailable { get; private set; }
+        private bool _battleStarted;
 
-        public bool IsTactical { get { return _battle.TacticalMission; } }
+        public RelayCommand AddRound { get; set; }
+        public RelayCommand AddKPoint { get; set; }
+        public RelayCommand DrawACard { get; set; }
+
+        public bool IsTactical { get; private set; }
+        public bool CanDrawACard { get; private set; }
 
         private Player _player;
         public Player Player { get { return _player; } }
         public int RoundNum { get { return _player.Round; } }
         public int VictoryPoints { get { return _player.VPoints; } }
 
-        private bool _firstBlood = false;
-        public bool FirstBlood { get { return _firstBlood; } }
-        private bool _slayWar = false;
-        public bool SlayWar { get { return _slayWar; } }
-        private bool _lineBreak = false;
-        public bool LineBreak { get { return _lineBreak; } }        
-
-        public void GainSpecialMission(SpecialMissionEnum s)
+        private bool _firstBlood;
+        public bool FirstBlood
         {
-            switch (s)
+            get { return _firstBlood; }
+            set
             {
-                case SpecialMissionEnum.FirstBlood:
-                    ChangeCondition(_firstBlood);
-                    return;
-                case SpecialMissionEnum.LineBreaker:
-                    ChangeCondition(_lineBreak);
-                    return;
-                case SpecialMissionEnum.SlayWarLord:
-                    ChangeCondition(_slayWar);
-                    return;
+                if (_firstBlood != value)
+                    _firstBlood = value;
+                CalculateSpecialVictoryPoints();
+                PInfo.UpdateInfo();
+            }
+        }
+        private bool _slayWar;
+        public bool SlayWar
+        {
+            get { return _slayWar; }
+            set
+            {
+                if (_slayWar != value)
+                    _slayWar = value;
+                CalculateSpecialVictoryPoints();
+                PInfo.UpdateInfo();
+            }
+        }
+        private bool _lineBreak;
+        public bool LineBreak
+        {
+            get { return _lineBreak; }
+            set
+            {
+                if (_lineBreak != value)
+                    _lineBreak = value;
+                CalculateSpecialVictoryPoints();
+                PInfo.UpdateInfo();
             }
         }
 
-        private void ChangeCondition(bool condition)
+        public BattleViewModel(RelayMission m) : base(m)
         {
-            if (condition)
-                condition = false;
-            else
-                condition = true;
+            _details = m.MDetails;
+            _armyId = m.ArmyId;
+            _battle = MissionFactory.CreateMission(_details);
+            _player = new Player(m.ArmyId, _battle.TacticalMission);
+            PInfo = new PlayerInfoViewModel(m.ViewModel, _player, _battle);
+            _firstBlood = false;
+            _lineBreak = false;
+            _slayWar = false;
+            CalculateSpecialVictoryPoints();
+            _battleStarted = true;
+            AddRound = new RelayCommand(CheckRound, BattleIsEnded);
+            AddKPoint = new RelayCommand(AddPoint, KPAllowed);
+            DrawACard = new RelayCommand(Draw, CanDraw);
+            KPAvailable = KPAllowed();
+            IsTactical = _battle.TacticalMission;
         }
 
         private void CalculateSpecialVictoryPoints()
@@ -69,23 +93,94 @@ namespace GrimDarkTracker.ViewModels
                 amount++;
             if (_lineBreak)
                 amount++;
-            _player.specialVPoints = amount;
+            _player.SpecialVPoints = amount;
+            _player.UpdateSpecialPoints();
         }
 
-        public bool AddRound()
+        private void CheckRound()
         {
-            if (IsTactical)
+            if (_player.Round <= 6)
             {
-                if (!_battle.UpdateDiscard(_player.Round, _player.Count))
+                if (IsTactical)
+                {
+                    if (!_battle.UpdateDiscard(_player.Round, _player.Count))
+                        _player.AddRound();
+                }
+                else
+                {
                     _player.AddRound();
-                return _battle.UpdateDiscard(_player.Round, _player.Count);
+
+                }
+                PInfo.UpdateInfo();
             }
-            else
-            {
-                _player.AddRound();
+            BattleIsEnded();
+        }
+
+        private void AddPoint()
+        {
+            _player.AddPoints(1);
+            PInfo.UpdateInfo();
+        }
+
+        private void AddPoints(int p)
+        {
+            _player.AddPoints(p);
+        }
+
+        private void Draw()
+        {
+            _player.Deal();
+            PInfo.UpdateInfo();
+        }
+
+        public bool CanDraw()
+        {
+            _player.UpdateAll();
+            if (IsTactical)
+                _battle.CalculateDraws(PInfo.Round, _player.Count);
+                        {
+                if (_player.Draws > 0)
                 return true;
             }
-        }   
+            return false;
+            
+        }
+
+        public bool KPAllowed()
+        {
+            switch (_details.Selector)
+            {
+                case MissionEnum.EGuns:
+                case MissionEnum.EMercy:
+                    return true;
+
+                case MissionEnum.ERelic:
+                case MissionEnum.ERetrieve:
+                case MissionEnum.EScour:
+                case MissionEnum.ESecure:
+                case MissionEnum.MCleanse:
+                case MissionEnum.MCloak:
+                case MissionEnum.MContact:
+                case MissionEnum.MDeadlock:
+                case MissionEnum.MEscalate:
+                case MissionEnum.MSpoils:
+                    return false;
+                default:
+                    return true;
+            }
+        }
+
+        public bool BattleIsEnded()
+        {
+            if (_player.Round <= 6)
+            {
+                if (IsTactical)
+                    return _battleStarted = !_battle.UpdateDiscard(_player.Round, _player.Count);
+                if (!IsTactical)
+                    return _battleStarted = true;
+            }
+            return _battleStarted = false;
+        }
 
         //Default to null in case there are no Tactical Objectives
         public bool DiscardObj(Card card = null)
@@ -95,7 +190,7 @@ namespace GrimDarkTracker.ViewModels
 
         #region View Bindings
         public string MissionName { get { return _battle.MissionType + ": " + _battle.MissionName; } }
-            public string MissionDescrip { get { return _battle.MissionDescription; } }
+        public string MissionDescrip { get { return _battle.MissionDescription; } }
         #endregion
     }
 }

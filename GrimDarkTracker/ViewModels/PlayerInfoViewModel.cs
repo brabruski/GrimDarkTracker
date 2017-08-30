@@ -61,16 +61,18 @@ namespace GrimDarkTracker.ViewModels
                 if (_round != value)
                 {
                     _round = value;
-                    RaisePropertyChanged("_vPoints");
+                    RaisePropertyChanged("Round");
                 }
             }
         }
 
         public string ArmyName { get; private set; }
         public bool TacticalFeatures { get; private set; }
+        private Player _player;
 
         public PlayerInfoViewModel(MainViewModel v, Player p, IMissionType m) : base(v)
         {
+            _player = p;
             VPoints = p.VPoints;
             ArmyName = p.ArmyName;
             Discards = m.CalculateDiscards(p.Round, p.Count);
@@ -82,10 +84,12 @@ namespace GrimDarkTracker.ViewModels
 
         public void UpdateInfo()
         {
+            _player.UpdateSpecialPoints();
+            VPoints = _player.VPoints;
+            Round = _player.Round;
             RaisePropertyChanged("DrawsLeft");
             RaisePropertyChanged("Discards");
             RaisePropertyChanged("VPoints");
-            RaisePropertyChanged("ArmyName");
             RaisePropertyChanged("Round");
         }
     }

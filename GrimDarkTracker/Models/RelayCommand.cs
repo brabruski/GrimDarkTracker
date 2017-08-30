@@ -7,6 +7,8 @@ namespace GrimDarkTracker.Models
     {
         readonly Action<object> _execute;
         readonly Predicate<object> _canExecute;
+        readonly Action _TargetExecuteMethod;
+        readonly Func<bool> _TargetCanExecuteMethod;
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
@@ -22,6 +24,17 @@ namespace GrimDarkTracker.Models
 
         }
 
+        public RelayCommand(Action executeMethod)
+        {
+            _TargetExecuteMethod = executeMethod;
+        }
+
+        public RelayCommand(Action executeMethod, Func<bool> canExecuteMethod)
+        {
+            _TargetExecuteMethod = executeMethod;
+            _TargetCanExecuteMethod = canExecuteMethod;
+        }
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
@@ -30,12 +43,23 @@ namespace GrimDarkTracker.Models
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute(parameter);
+            if (_canExecute != null)
+                return _canExecute(parameter);                
+
+            if (_TargetCanExecuteMethod != null)
+                return _TargetCanExecuteMethod();
+
+            return true;
         }
 
         public void Execute(object parameter)
         {
+            if (_execute != null)
             _execute.Invoke(parameter);
+            if (_TargetExecuteMethod != null)
+            {
+                _TargetExecuteMethod();
+            }
         }
     }
 

@@ -38,7 +38,7 @@
                                      Visibility="{Binding TacticalFeatures, Converter={StaticResource visibilityConverter}}"
                                      Margin="6" />
                 <Separator />
-                <materialDesign:Chip Icon="{Binding VPoints}"
+                <materialDesign:Chip x:Name="VPoints" Icon="{Binding VPoints}"
                                      Content="Victory Points"
                                      IconBackground="{DynamicResource SecondaryAccentBrush}"
                                      IconForeground="{DynamicResource SecondaryAccentForegroundBrush}"
