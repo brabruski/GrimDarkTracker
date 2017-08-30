@@ -1,6 +1,6 @@
 ﻿namespace GrimDarkTracker.Models.MissionModels
 {
-    enum SpecialMissionEnum
+    public enum SpecialMissionEnum
     {
         FirstBlood,
         SlayWarLord,

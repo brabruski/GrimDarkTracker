@@ -43,15 +43,31 @@ namespace GrimDarkTracker.Models
         [XmlAttribute("BonusObj")]
         public bool BonusObj { get; set; }
 
-        public ObservableCollection<PointRange> VictoryPointRange { get { return CreateList(MinVP, MaxVP); } }
+        int _selectedAmount;
+        public int SelectedAmount
+        {
+            get
+            {
+                return _selectedAmount;
+            }
+            set
+            {
+                if (_selectedAmount != value)
+                {
+                    _selectedAmount = value;                    
+                }
+            }
+        }
+
+        public ObservableCollection<int> VictoryPointRange { get { return CreateList(MinVP, MaxVP); } }
 
         //Create list of victory points for combobox
-        private ObservableCollection<PointRange> CreateList(int num1 = 1, int num2 = 1)
+        private ObservableCollection<int> CreateList(int num1 = 1, int num2 = 1)
         {
-            ObservableCollection<PointRange> tempList = new ObservableCollection<PointRange>();
+            ObservableCollection<int> tempList = new ObservableCollection<int>();
             do 
             {
-                tempList.Add(new PointRange(num1));
+                tempList.Add(num1);
                 num1++;
             } while (num1 <= num2);
             return tempList;

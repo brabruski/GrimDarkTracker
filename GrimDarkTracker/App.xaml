@@ -24,7 +24,13 @@
             </DataTemplate>
             <DataTemplate x:Name="battleViewTemplate" DataType="{x:Type viewmodels:BattleViewModel}">
                 <views:BattleView DataContext="{Binding}"/>
-            </DataTemplate>            
+            </DataTemplate>
+            <DataTemplate x:Name="playerInfoViewTemplate" DataType="{x:Type viewmodels:PlayerInfoViewModel}">
+                <views:PlayerInfoView DataContext="{Binding}"/>
+            </DataTemplate>
+            <DataTemplate x:Name="playDeckViewTemplate" DataType="{x:Type viewmodels:PlayDeckViewModel}">
+                <views:PlayDeckView DataContext="{Binding}"/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

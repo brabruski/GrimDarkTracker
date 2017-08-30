@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace GrimDarkTracker.Models
 {
-    class Player
+    public class Player
     {
         private int _round;
         public int Round { get { return _round; } }
@@ -15,18 +16,22 @@ namespace GrimDarkTracker.Models
         private int _vpoints;
         public int VPoints { get { return _vpoints + specialVPoints; } }
         private Deck _inPlayDeck;        
-        public Deck InPlayDeck { get { return _inPlayDeck; } }
+        public ObservableCollection<Card> InPlayDeck { get; private set;}
         private Deck _tacticalDeck;
-        public Deck TacticalDeck { get { return _tacticalDeck; } }
+        public ObservableCollection<Card> TacticalDeck { get; private set; }
         public int Count { get { return _inPlayDeck.Count; } }
+        public string ArmyName { get; private set;}
 
-        public Player(int army, bool isTactical)
+        public Player(int armyId, bool isTactical)
         {
             _round = 1;
             _vpoints = 0;
             _inPlayDeck = new Deck();
-            _tacticalDeck = new Deck(army);
+            _tacticalDeck = new Deck(armyId);
             IsTactical = isTactical;
+            InPlayDeck = _inPlayDeck.TacticalDeck();
+            TacticalDeck = _tacticalDeck.TacticalDeck();            
+            ArmyName = _tacticalDeck.Peek(0).ArmyName;
         }
 
         public void AddPoints(int p)
@@ -41,7 +46,7 @@ namespace GrimDarkTracker.Models
 
         public void Deal()
         {
-            _inPlayDeck.Add(_tacticalDeck.Deal());
+            _inPlayDeck.Add(_tacticalDeck.Deal());            
         }        
 
         public string GetArmyName()

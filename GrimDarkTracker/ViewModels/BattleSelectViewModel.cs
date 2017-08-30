@@ -13,7 +13,6 @@ namespace GrimDarkTracker.ViewModels
 {
     class BattleSelectViewModel : BaseViewModel
     {
-        private XMLDatabase _db;
         private static List<Army> _armies;
         public List<Army> Armies { get { return _armies; } }
         public List<MissionDetails> MissionList { get { return _missionList; } }
@@ -27,8 +26,7 @@ namespace GrimDarkTracker.ViewModels
 
         public BattleSelectViewModel(MainViewModel main) : base(main)
         {
-            _db = new XMLDatabase();
-            _armies = _db.ArmyList;
+            _armies = XMLDatabase.ArmyList;
             _missionList = new List<MissionDetails>();
             _missionDetails = new MissionDetails();
             _relayParam = new RelayMission(main, _missionDetails, 1);
@@ -36,7 +34,7 @@ namespace GrimDarkTracker.ViewModels
             SwitchToBattle = new RelayCommand<RelayMission>(ToBattle, ValidSelections);
         }
 
-        #region Selected Properties
+        #region Player's Selected Properties
         MissionEnum _selectedMission;
         public MissionEnum SelectedMission
         {
@@ -64,7 +62,7 @@ namespace GrimDarkTracker.ViewModels
                 if (m == t.Selector)
                     return t.MissionName;
             }
-            return MissionDetails.PlaceHolderMissionName;
+            return Constants.PlaceHolderMissionName;
         }
 
         int _selectedArmy;
@@ -123,28 +121,28 @@ namespace GrimDarkTracker.ViewModels
         private List<MissionDetails> _missionList;
         private List<MissionDetails> _eternal = new List<MissionDetails>()
         {
-            new MissionDetails(MissionEnum.ESecure, "Secure & Control"),
-            new MissionDetails(MissionEnum.EScour, "The Scouring"),
-            new MissionDetails(MissionEnum.ERetrieve, "Retrieval Mission"),
-            new MissionDetails(MissionEnum.ERelic, "The Relic"),
-            new MissionDetails(MissionEnum.EMercy, "No Mercy"),
-            new MissionDetails(MissionEnum.EGuns, "Big Guns Never Tire"),
+            new MissionDetails(MissionEnum.ESecure, Constants.MSecure),
+            new MissionDetails(MissionEnum.EScour, Constants.MScour),
+            new MissionDetails(MissionEnum.ERetrieve, Constants.MRetrieve),
+            new MissionDetails(MissionEnum.ERelic, Constants.MRelic),
+            new MissionDetails(MissionEnum.EMercy, Constants.MMercy),
+            new MissionDetails(MissionEnum.EGuns, Constants.MGuns),
         };
 
         private List<MissionDetails> _maelstrom = new List<MissionDetails>()
         {
-            new MissionDetails(MissionEnum.MSpoils, "Spoils of War"),
-            new MissionDetails(MissionEnum.MEscalate, "Tactical Escalation"),
-            new MissionDetails(MissionEnum.MDeadlock, "Deadlock"),
-            new MissionDetails(MissionEnum.MContact, "Contact Lost"),
-            new MissionDetails(MissionEnum.MCloak, "Cloak & Shadows"),
-            new MissionDetails(MissionEnum.MCleanse, "Cleanse & Capture"),
+            new MissionDetails(MissionEnum.MSpoils, Constants.MSpoil),
+            new MissionDetails(MissionEnum.MEscalate, Constants.MEscalate),
+            new MissionDetails(MissionEnum.MDeadlock, Constants.MDead),
+            new MissionDetails(MissionEnum.MContact, Constants.MContact),
+            new MissionDetails(MissionEnum.MCloak, Constants.MCloak),
+            new MissionDetails(MissionEnum.MCleanse, Constants.MClean),
         };
 
         private List<MissionSelections> _missionTypes = new List<MissionSelections>()
         {
-            new MissionSelections(MissionDetails.Eternal, 1),
-            new MissionSelections(MissionDetails.Maelstrom, 2),
+            new MissionSelections(Constants.Eternal, 1),
+            new MissionSelections(Constants.Maelstrom, 2),
         };
         #endregion
 
@@ -160,14 +158,13 @@ namespace GrimDarkTracker.ViewModels
             {
                 string tempMission = param.MDetails.MissionName;
                 MissionEnum tempEnum = param.MDetails.Selector;
-                if (tempEnum == 0 || tempMission == MissionDetails.PlaceHolderMissionName)
+                if (tempEnum == 0 || tempMission == Constants.PlaceHolderMissionName)
                     return false;
             }
             if (param == null || _selectedMission == 0)
                 return false;
             return true;
         }
-
 
     }
 }

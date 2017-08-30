@@ -76,6 +76,7 @@
     <Compile Include="Models\Army.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardType.cs" />
+    <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\Deck.cs" />
     <Compile Include="Models\MissionModels\EMissionGuns.cs" />
     <Compile Include="Models\MissionModels\EMissionMercy.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="Models\MissionModels\MMissionSpoils.cs" />
     <Compile Include="Models\MissionModels\SpecialMissionEnum.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\PointRange.cs" />
     <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="Models\RelayMission.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
@@ -109,6 +109,8 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ObservableViewModel.cs" />
+    <Compile Include="ViewModels\PlayDeckViewModel.cs" />
+    <Compile Include="ViewModels\PlayerInfoViewModel.cs" />
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +125,12 @@
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayDeckView.xaml.cs">
+      <DependentUpon>PlayDeckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerInfoView.xaml.cs">
+      <DependentUpon>PlayerInfoView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +179,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayDeckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

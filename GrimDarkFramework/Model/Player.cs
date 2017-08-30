@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Model
 {
-    class Player
+    public class Player
     {
         private int _round;
         public int Round { get { return _round; } }

@@ -9,34 +9,38 @@ namespace GrimDarkTracker.Models
 {
     public class Deck
     {
-        public ObservableCollection<Card> TacticalDeck { get { return new ObservableCollection<Card>(_tacticalDeck); } }
-        private List<Card> _tacticalDeck;
+        private ObservableCollection<Card> _tacticalDeck;
+        
         private Random random = new Random();
-        public int Count { get { return _tacticalDeck.Count(); } }
+        public int Count {
+            get
+            {
+                if (_tacticalDeck == null)
+                    return 0;
+                return _tacticalDeck.Count(); } }
 
         //Constructor Depending on saved files or new decks
         public Deck()
         {
-            _tacticalDeck = new List<Card>();
+            _tacticalDeck = new ObservableCollection<Card>();            
         }
 
         public Deck(int army=1)
         {
             var tempDeck = new XMLDatabase(army);
-            _tacticalDeck = tempDeck.TactDeck as List<Card>;
-            Shuffle();
+            _tacticalDeck = new ObservableCollection<Card>(tempDeck.TactDeck);            
+            _tacticalDeck = Shuffle(_tacticalDeck);
         }
 
-        public Deck(string FilePath)
+        public ObservableCollection<Card> TacticalDeck()
         {
-            var tempDeck = new XMLDatabase(FilePath);
-            _tacticalDeck = tempDeck.TactDeck as List<Card>;
-        }        
+            return _tacticalDeck;
+        }
 
         //Allows you to see a card without dealing it
         public Card Peek(int cardId)
         {
-            return TacticalDeck[cardId];
+            return _tacticalDeck[cardId];
         }
 
         public void Add(Card cardToAdd)
@@ -57,17 +61,20 @@ namespace GrimDarkTracker.Models
             return cardToDeal;
         }
 
-        public void Shuffle()
+        public ObservableCollection<Card> Shuffle(ObservableCollection<Card> deck)
         {
-            List<Card> shuffledList = new List<Card>();
-            while (_tacticalDeck.Count > 0)
+            if (deck != null)
             {
-                int cardIndexToMove = random.Next(_tacticalDeck.Count);
-                shuffledList.Add(_tacticalDeck[cardIndexToMove]);
-                _tacticalDeck.Remove(_tacticalDeck[cardIndexToMove]);
+                ObservableCollection<Card> shuffledList = new ObservableCollection<Card>();
+                while (deck.Count > 0)
+                {
+                    int cardIndexToMove = random.Next(deck.Count);
+                    shuffledList.Add(deck[cardIndexToMove]);
+                    deck.Remove(deck[cardIndexToMove]);
+                }
+                return shuffledList;
             }
-            _tacticalDeck = shuffledList;
+            return deck;
         }
-
     }
 }

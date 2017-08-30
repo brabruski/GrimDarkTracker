@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Missions
 {
-    enum SpecialMissionEnum
+   public enum SpecialMissionEnum
     {
         FirstBlood,
         SlayWarLord,

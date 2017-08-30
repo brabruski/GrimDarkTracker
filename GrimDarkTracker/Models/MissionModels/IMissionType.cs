@@ -1,6 +1,6 @@
 ﻿namespace GrimDarkTracker.Models.MissionModels
 {
-    interface IMissionType
+    public interface IMissionType
     {
         int[] Objectives { get; }
         string MissionName { get; }

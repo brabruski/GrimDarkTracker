@@ -8,6 +8,7 @@ namespace GrimDarkTracker.Models
         public int ArmyId { get; set; }
         public string ArmyName { get; set; }
         public string ArmyColour { get; set; }
+        public bool Available { get; set; }
 
         public override string ToString()
         {

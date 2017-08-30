@@ -2,7 +2,8 @@
 {
     public enum MissionEnum
     {
-        ERetrieve = 1,
+        NoSelection,
+        ERetrieve,
         EMercy,
         EScour,
         EGuns,

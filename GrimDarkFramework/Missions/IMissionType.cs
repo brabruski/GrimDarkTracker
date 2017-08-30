@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkFramework.Model
 {
-    interface IMissionType
+    public interface IMissionType
     {
         int[] Objectives { get; }
         string MissionName { get; }

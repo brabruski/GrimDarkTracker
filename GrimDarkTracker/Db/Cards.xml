@@ -540,4 +540,274 @@
     <HighWounds>false</HighWounds>
     <BonusObj>true</BonusObj>
   </Card>
+  <Card>
+    <CardId>37</CardId>
+    <CardName>Death From Above</CardName>
+    <CardNum>11</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score 1 victory point if at least one enemy unit was destroyed in your turn, and the last model in the enemy unit was slain by an attack made by a unit that can FLY, or a unit that arrived as reinforcements during the turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>38</CardId>
+    <CardName>Honour Your Chapter</CardName>
+    <CardNum>12</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score 1 victory point if an enemy CHARACTER lost a wound as the result of an attack made by one of your CHARACTERS during this turn. If any enemy CHARACTERS were slain as the result of such an attack, score D3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>39</CardId>
+    <CardName>No Mercy, No Respite</CardName>
+    <CardNum>13</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score 1 victory point if at least one enemy unit was destroyed and/or failed a Morale test this turn. If three or more units were destroyed and/or failed Morale tests, score D3 victory points instead</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>40</CardId>
+    <CardName>For the Emperor!</CardName>
+    <CardNum>14</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score 1 victory point if one or more of your INFANTRY or BIKER units made a successful charge during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>41</CardId>
+    <CardName>Lightning Strike</CardName>
+    <CardNum>15</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score 1 victory point if at least one enemy unit that was entirely within the enemy deployment zone at the start of the turn was destroyed during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>42</CardId>
+    <CardName>Emperor's Retribution</CardName>
+    <CardNum>16</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>11</ArmyId>
+    <CardDescrip>Score D3 victory points if you control an objective marker that was controlled by your opponent at the start of the turn. If you control 3 or more objective markers that were controlled by your opponent at the start of the turn, score D3+3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>6</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>43</CardId>
+    <CardName>Destroy The Daemon</CardName>
+    <CardNum>11</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>Score 1 victory point if you destroyed at least one enemy DAEMON unit during this turn. If you destroyed between 3 and 5 enemy DAEMON units during this turn, score D3 victory points instead. If you destroyed 6 or more enemy DAEMON units during this turn, score D3+3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>6</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>44</CardId>
+    <CardName>Psychic Communion</CardName>
+    <CardNum>12</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>Score 1 victory point if you successfully manifested at least 3 psychic powers during your turn. If you successfully manifested 6 or more psychic powers during your turn, score D3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>true</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>45</CardId>
+    <CardName>No Witnesses!</CardName>
+    <CardNum>13</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>Score 1 victory point if all of your opponent’s CHARACTER models have been removed as casualties.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>46</CardId>
+    <CardName>Deeds of Legend</CardName>
+    <CardNum>14</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>Score D3 victory points if you killed an enemy CHARACTER or MONSTER during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>47</CardId>
+    <CardName>Teleport Attack</CardName>
+    <CardNum>15</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>Score 1 victory point if at least one enemy unit was destroyed by a unit in your army that used the Teleport Strike, Personal Teleporters or Warp Emergence ability to arrive on the battlefield this turn, or was the target of the Gate of Infinity psychic power this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>48</CardId>
+    <CardName>Rites of Exorcism</CardName>
+    <CardNum>16</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>7</ArmyId>
+    <CardDescrip>When this Tactical Objective is generated, your opponent must select an objective marker. If you control that objective marker at the end of any turn, score 1 victory point. If you control that objective marker at the end of the turn in which this Tactical Objective was generated, score D3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+  <Card>
+    <CardId>49</CardId>
+    <CardName>For the Dark Gods!</CardName>
+    <CardNum>11</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Score 1 victory point if an enemy unit was destroyed or failed a Morale test during this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>50</CardId>
+    <CardName>Rise to Glory</CardName>
+    <CardNum>12</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Score 1 victory point if at least one enemy CHARACTER, VEHICLE or MONSTER was destroyed during this turn and the last wound it suffered was inflicted by a friendly HERETIC ASTARTES CHARACTER.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>51</CardId>
+    <CardName>The Will of Chaos</CardName>
+    <CardNum>13</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Roll a D6 when this Tactical Objective is generated, and the start of each of your turns thereafter. Score 1 victory point if you control the objective marker whose number corresponds to the D6 result you rolled at the start of this turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>1</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>52</CardId>
+    <CardName>The Warp Is Your Ally</CardName>
+    <CardNum>14</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Score 1 victory point if you manifested a psychic power during your turn or if you summoned a unit of DAEMONS to the battlefield with a Daemonic Ritual. Score D3 victory points instead if you manifested a psychic power and you summoned a unit of DAEMONS to the battlefield during your turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>53</CardId>
+    <CardName>Claim and Despoil</CardName>
+    <CardNum>15</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Score D3 victory points if you control an objective marker that was controlled by your opponent at the start of the turn.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>3</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
+<Card>
+    <CardId>54</CardId>
+    <CardName>The Long War</CardName>
+    <CardNum>16</CardNum>
+    <CardTypeId>7</CardTypeId>
+    <ArmyId>3</ArmyId>
+    <CardDescrip>Score 1 victory point if an enemy unit was destroyed during this turn. Score D3 instead if any IMPERIUM units were destroyed this turn. If 3 or more IMPERIUM units were destroyed during this turn, score 3 victory points, and if 6 or more IMPERIUM units were destroyed during this turn, score D3+3 victory points instead.</CardDescrip>
+    <CardMinVP>1</CardMinVP>
+    <CardMaxVP>6</CardMaxVP>
+    <Flyer>false</Flyer>
+    <Fort>false</Fort>
+    <Psyker>false</Psyker>
+    <HighWounds>false</HighWounds>
+    <BonusObj>false</BonusObj>
+  </Card>
 </Cards>

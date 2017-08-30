@@ -24,6 +24,10 @@
     <CardTypeId>6</CardTypeId>
     <CardTypeName>Annihilation</CardTypeName>
   </CardType>
+  <CardType>
+    <CardTypeId>7</CardTypeId>
+    <CardTypeName>Army Card</CardTypeName>
+  </CardType>
 </CardTypes>
 
 

@@ -4,70 +4,84 @@
     <ArmyId>1</ArmyId>
     <ArmyName>Core Rules</ArmyName>
     <ArmyColour>DarkBlue</ArmyColour>
+    <Available>true</Available>
   </Army>
   <Army>
     <ArmyId>2</ArmyId>
     <ArmyName>Blood Angels</ArmyName>
     <ArmyColour>DarkRed</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>3</ArmyId>
-    <ArmyName>Chaos</ArmyName>
+    <ArmyName>Chaos Marines</ArmyName>
     <ArmyColour>DarkRed</ArmyColour>
+    <Available>true</Available>
   </Army>
   <Army>
     <ArmyId>4</ArmyId>
     <ArmyName>Dark Angels</ArmyName>
     <ArmyColour>Green</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>5</ArmyId>
     <ArmyName>Dark Eldar</ArmyName>
     <ArmyColour>Purple</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>6</ArmyId>
     <ArmyName>Eldar</ArmyName>
     <ArmyColour>Gold</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>7</ArmyId>
     <ArmyName>Grey Knights</ArmyName>
     <ArmyColour>DarkBlue</ArmyColour>
+    <Available>true</Available>
   </Army>
   <Army>
     <ArmyId>8</ArmyId>
     <ArmyName>Harlequins</ArmyName>
     <ArmyColour>Purple</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>9</ArmyId>
     <ArmyName>Necron</ArmyName>
     <ArmyColour>Green</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>10</ArmyId>
     <ArmyName>Orc</ArmyName>
     <ArmyColour>Green</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>11</ArmyId>
     <ArmyName>Space Marines</ArmyName>
     <ArmyColour>DarkBlue</ArmyColour>
+    <Available>true</Available>
   </Army>
   <Army>
     <ArmyId>12</ArmyId>
     <ArmyName>Space Wolves</ArmyName>
     <ArmyColour>DodgerBlue</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>13</ArmyId>
     <ArmyName>Tau</ArmyName>
     <ArmyColour>DarkOrange</ArmyColour>
+    <Available>false</Available>
   </Army>
   <Army>
     <ArmyId>14</ArmyId>
     <ArmyName>Adeptus Mechanicus</ArmyName>
     <ArmyColour>Gold</ArmyColour>
+    <Available>false</Available>
   </Army>
 </Armies>

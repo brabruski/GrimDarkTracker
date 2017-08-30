@@ -9,6 +9,87 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock Text="Battle View Success" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+        <ContentControl Content="{Binding PInfo}"/>
+        </DockPanel>
+        <!-- Special Mission Buttons -->
+        <materialDesign:ColorZone Mode="PrimaryDark" Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" >
+                <StackPanel Orientation="Horizontal" Margin="10 0 0 0" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center">First Blood</TextBlock>
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
+                          ToolTip="First Blood Special Mission">
+                        <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Kind="PlusOne"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20 0 0 0" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center">Slay the Warlord</TextBlock>
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
+                          ToolTip="Slay the Warlord Special Mission">
+                        <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Kind="PlusOne"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20 0 0 0" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center">Line Breaker</TextBlock>
+                    <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" VerticalAlignment="Center" Margin="8 0 0 0" 
+                          ToolTip="Line Breaker Special Mission">
+                        <materialDesign:PackIcon Kind="Sword"></materialDesign:PackIcon>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Kind="PlusOne"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </StackPanel>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                    Margin="30 0"
+                    Width="Auto"
+                    ToolTip="Gain 1 Victory Point for Destroying a Unit"
+                    materialDesign:RippleAssist.Feedback="#DD000000"
+                    HorizontalAlignment="Right">Score Kill Point</Button>
+                <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                    Margin="30 0"
+                    Width="Auto"
+                    ToolTip="End the Round"
+                    materialDesign:RippleAssist.Feedback="#DD000000"
+                    HorizontalAlignment="Right">End Round</Button>
+            </StackPanel>
+        </materialDesign:ColorZone>
+        
+        <!--Mission Details-->
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Stretch" Grid.RowSpan="3" Grid.Column="1">
+            <Border Background="{DynamicResource MaterialDesignDivider}" Width="1" VerticalAlignment="Stretch" SnapsToDevicePixels="True" />
+            <Expander ExpandDirection="Left">
+                    <Expander.Header>
+                        <TextBlock Text="Mission Rules" RenderTransformOrigin=".5,.5">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="90" />
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>
+                    </Expander.Header>
+                    <StackPanel Orientation="Vertical"
+                            TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                            Margin="8,24,16,24">
+                        <TextBlock Text="{Binding MissionName}" />
+                        <TextBlock Opacity=".68" Text="{Binding MissionDescrip}"
+                               MaxWidth="180"
+                               TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Expander>                
+            </StackPanel>
+
     </Grid>
 </UserControl>
