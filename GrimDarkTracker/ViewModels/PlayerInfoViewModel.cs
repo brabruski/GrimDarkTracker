@@ -84,7 +84,7 @@ namespace GrimDarkTracker.ViewModels
 
         public void UpdateInfo()
         {
-            _player.UpdateSpecialPoints();
+            _player.UpdateVictoryPoints();
             VPoints = _player.VPoints;
             Round = _player.Round;
             RaisePropertyChanged("DrawsLeft");

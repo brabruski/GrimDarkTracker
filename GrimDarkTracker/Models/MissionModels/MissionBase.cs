@@ -1,13 +1,12 @@
 ﻿using GrimDarkTracker.Models;
+using System;
+using System.Collections.ObjectModel;
 
 namespace GrimDarkTracker.Models.MissionModels
 {
     //Allows all mission classes to inherit from a base mission class to avoid duplicate code
     class MissionBase : IMissionType
     {
-        protected int[] _objectives;
-        public int[] Objectives { get { return _objectives; } }
-
         protected string _name;
         public string MissionName { get { return _name; } }
 
@@ -23,6 +22,9 @@ namespace GrimDarkTracker.Models.MissionModels
         protected bool _tacticalMission;
         public bool TacticalMission { get { return _tacticalMission; } }
 
+        protected ObservableCollection<Objective> _objectives;
+        public ObservableCollection<Objective> Objectives { get { return _objectives; } }
+
         protected bool _discard;
         public bool Discard { get { return _discard; } }
         protected int _draws;
@@ -30,7 +32,14 @@ namespace GrimDarkTracker.Models.MissionModels
 
         public MissionBase(MissionDetails details)
         {
-            _objectives = new int[] { 1, 1, 1, 1, 1, 1 };
+            _objectives = new ObservableCollection<Objective> {
+                new Objective(1, 1),
+                new Objective(1, 2),
+                new Objective(1, 3),
+                new Objective(1, 4),
+                new Objective(1, 5),
+                new Objective(1, 6),
+            };
             _name = details.MissionName;
             _type = details.MissionType;
             _startingObj = 0;
@@ -60,6 +69,17 @@ namespace GrimDarkTracker.Models.MissionModels
         {
             _discard = true;
             return _discard; ;
+        }
+
+        public virtual int CalculateObjectives()
+        {
+            int tempAmount = 0;
+            foreach (Objective o in _objectives)
+            {
+                if (o.IsUsed)
+                    tempAmount += o.ObjectiveValue;                
+            }
+            return tempAmount;
         }
     }
 }

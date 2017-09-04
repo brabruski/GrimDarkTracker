@@ -1,10 +1,15 @@
-﻿namespace GrimDarkTracker.Models.MissionModels
+﻿using System.Collections.ObjectModel;
+
+namespace GrimDarkTracker.Models.MissionModels
 {
     class EMissionSecure : MissionBase
     {
         public EMissionSecure(MissionDetails m) : base(m)
         {
-            _objectives = new int[] { 3, 3 };
+            _objectives = new ObservableCollection<Objective> {
+                new Objective(3, 1),
+                new Objective(3, 2)
+            };
             _descrip = "Players setup one Objective Marker each in their own Deployment Zone. " +
                 "Objective Markers cannot be placed 6\" or less to the battlefield edge. " +
                 "Each Objective Marker controlled by a unit at the end of the game is worth " +

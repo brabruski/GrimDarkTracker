@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:views="clr-namespace:GrimDarkTracker.Views"
              xmlns:viewmodels="clr-namespace:GrimDarkTracker.ViewModels"
+             xmlns:mviewmodels="clr-namespace:GrimDarkTracker.ViewModels.MissionViewModels"
              StartupUri="Views/MainWindow.xaml">
 
     <Application.Resources>
@@ -30,6 +31,12 @@
             </DataTemplate>
             <DataTemplate x:Name="playDeckViewTemplate" DataType="{x:Type viewmodels:PlayDeckViewModel}">
                 <views:PlayDeckView DataContext="{Binding}"/>
+            </DataTemplate>
+            <DataTemplate x:Name="eternalViewTemplate" DataType="{x:Type mviewmodels:EternalViewModel}">
+                <views:EternalView DataContext="{Binding}"/>
+            </DataTemplate>
+            <DataTemplate x:Name="maelstromViewTemplate" DataType="{x:Type mviewmodels:MaelstromViewModel}">
+                <views:MaelstromView DataContext="{Binding}"/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

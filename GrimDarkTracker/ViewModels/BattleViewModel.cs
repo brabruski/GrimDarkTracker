@@ -1,5 +1,6 @@
 ﻿using GrimDarkTracker.Models;
 using GrimDarkTracker.Models.MissionModels;
+using GrimDarkTracker.ViewModels.MissionViewModels;
 using System;
 using System.Collections.ObjectModel;
 
@@ -9,7 +10,7 @@ namespace GrimDarkTracker.ViewModels
     {
         private MissionDetails _details;
         private IMissionType _battle;
-        public IMissionType CurrentMission { get { return _battle; } }
+        public IMissionViewModel CurrentMission { get; private set; }
         private int _armyId;
         public PlayerInfoViewModel PInfo { get; private set; }
 
@@ -70,7 +71,8 @@ namespace GrimDarkTracker.ViewModels
             _details = m.MDetails;
             _armyId = m.ArmyId;
             _battle = MissionFactory.CreateMission(_details);
-            _player = new Player(m.ArmyId, _battle.TacticalMission);
+            CurrentMission = MissionViewModelFactory.CreateViewModel(_details.Selector, _battle);
+            _player = new Player(m.ArmyId, _battle);
             PInfo = new PlayerInfoViewModel(m.ViewModel, _player, _battle);
             _firstBlood = false;
             _lineBreak = false;
@@ -94,7 +96,7 @@ namespace GrimDarkTracker.ViewModels
             if (_lineBreak)
                 amount++;
             _player.SpecialVPoints = amount;
-            _player.UpdateSpecialPoints();
+            _player.UpdateVictoryPoints();
         }
 
         private void CheckRound()

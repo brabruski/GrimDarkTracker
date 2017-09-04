@@ -97,6 +97,8 @@
     <Compile Include="Models\MissionModels\MMissionEscalate.cs" />
     <Compile Include="Models\MissionModels\MMissionSpoils.cs" />
     <Compile Include="Models\MissionModels\SpecialMissionEnum.cs" />
+    <Compile Include="Models\Objective.cs" />
+    <Compile Include="Models\ObjectiveUsedCommand.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="Models\RelayMission.cs" />
@@ -108,6 +110,11 @@
     <Compile Include="ViewModels\BooleanVisibilityConverter.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MissionViewModels\EternalViewModel.cs" />
+    <Compile Include="ViewModels\MissionViewModels\IMissionViewModel.cs" />
+    <Compile Include="ViewModels\MissionViewModels\MaelstromViewModel.cs" />
+    <Compile Include="ViewModels\MissionViewModels\MissionViewModelFactory.cs" />
+    <Compile Include="Models\ObjectivePointsEventArgs.cs" />
     <Compile Include="ViewModels\ObservableViewModel.cs" />
     <Compile Include="ViewModels\PlayDeckViewModel.cs" />
     <Compile Include="ViewModels\PlayerInfoViewModel.cs" />
@@ -120,8 +127,14 @@
     <Compile Include="Views\BattleView.xaml.cs">
       <DependentUpon>BattleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EternalView.xaml.cs">
+      <DependentUpon>EternalView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaelstromView.xaml.cs">
+      <DependentUpon>MaelstromView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -174,7 +187,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EternalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaelstromView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

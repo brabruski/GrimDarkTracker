@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GrimDarkTracker.ViewModels
 {
-    class PlayDeckViewModel : BaseViewModel
+    public class PlayDeckViewModel : BaseViewModel
     {
         public ObservableCollection<Card> InPlayDeck { get; private set; }
         private List<Card> _tacticalDeck;

@@ -18,8 +18,8 @@
             <viewmodel:PlayDeckViewModel x:Key="playDeckViewModel"/>
         </ResourceDictionary>
     </UserControl.Resources>
-    <ListView ItemsSource="{Binding TacticalDeck}" Margin="0,0,20,0">
-        <ListView.ItemTemplate>
+    <ItemsControl ItemsSource="{Binding TacticalDeck}" Margin="0,0,20,0">
+        <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <WrapPanel Margin="0 0 8 8">
                     <StackPanel>
@@ -118,7 +118,7 @@
                     </StackPanel>
                 </WrapPanel>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
 
 </UserControl>

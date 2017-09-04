@@ -1,10 +1,14 @@
-﻿namespace GrimDarkTracker.Models.MissionModels
+﻿using System.Collections.ObjectModel;
+
+namespace GrimDarkTracker.Models.MissionModels
 {
     class EMissionRelic : MissionBase
     {
         public EMissionRelic(MissionDetails m) : base(m)
         {
-            _objectives = new int[] { 1 };
+            _objectives = new ObservableCollection<Objective> {
+                new Objective(1, "Relic")
+            };
             _descrip = "Place a single Objective Marker at the centre of the battlefield to represent " +
                 "the Relic. If a player's unit is carrying the Relic at the end of the game, " +
                 "then they win a Major Victory. If no player is carrying the Relic, then the player " +

@@ -1,10 +1,19 @@
-﻿namespace GrimDarkTracker.Models.MissionModels
+﻿using System.Collections.ObjectModel;
+
+namespace GrimDarkTracker.Models.MissionModels
 {
     class EMissionScour : MissionBase
     {
         public EMissionScour(MissionDetails m) : base(m)
         {
-            _objectives = new int[] { 1, 2, 2, 2, 2, 4 };
+            _objectives = new ObservableCollection<Objective> {
+                new Objective(1, 1),
+                new Objective(2, 2),
+                new Objective(2, 3),
+                new Objective(2, 4),
+                new Objective(2, 5),
+                new Objective(4, 6)
+            };
             _descrip = "Setup six Objective Markers on the battlefield. " +
                 "Objective Markers can be placed anywhere on the battlefield, as long as each " +
                 "Objective Marker is not within 6\" of the edge of the battlefield as well as " +
