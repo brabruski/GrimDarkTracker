@@ -91,6 +91,8 @@ namespace GrimDarkTracker.ViewModels
             RaisePropertyChanged("Discards");
             RaisePropertyChanged("VPoints");
             RaisePropertyChanged("Round");
+            Console.WriteLine("PInfo Model After Updating Points: {0}", VPoints);
+            Console.WriteLine("Player After Model: {0}", _player.VPoints);
         }
     }
 }

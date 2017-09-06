@@ -1,4 +1,5 @@
-﻿using GrimDarkTracker.Models.MissionModels;
+﻿using GrimDarkTracker.Models;
+using GrimDarkTracker.Models.MissionModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace GrimDarkTracker.ViewModels.MissionViewModels
 {
     class MissionViewModelFactory
     {
-        public static IMissionViewModel CreateViewModel(MissionEnum m, IMissionType battle)
+        public static IMissionViewModel CreateViewModel(MissionEnum m, IMissionType battle, Player player)
         {
             switch (m)
             {
@@ -19,16 +20,16 @@ namespace GrimDarkTracker.ViewModels.MissionViewModels
                 case MissionEnum.ERelic:                    
                 case MissionEnum.EScour:                    
                 case MissionEnum.ESecure:
-                    return new EternalViewModel(battle);
+                    return new EternalViewModel(battle, player);
                 case MissionEnum.MCleanse:                    
                 case MissionEnum.MCloak:                    
                 case MissionEnum.MContact:
                 case MissionEnum.MDeadlock:
                 case MissionEnum.MEscalate:
                 case MissionEnum.MSpoils:
-                    return new MaelstromViewModel(battle);
+                    return new MaelstromViewModel(battle, player);
                 default:
-                    return new EternalViewModel(battle);
+                    return new EternalViewModel(battle, player);
             }
         }
     }

@@ -43,7 +43,7 @@
                                           ToolTip="Objective Marker"
                                           Height="60" Width="60"
                                           IsChecked="{Binding IsUsed, Mode=TwoWay}"
-                                          Click="UpdateObjectives_Click">
+                                          >
                                 <ToggleButton.Content>
                                     <TextBlock Text="{Binding ObjectiveValue}" FontSize="20"/>
                             </ToggleButton.Content>

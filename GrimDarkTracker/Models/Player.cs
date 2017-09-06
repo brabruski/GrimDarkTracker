@@ -19,10 +19,10 @@ namespace GrimDarkTracker.Models
         private int _vpoints;
         public int VPoints { get; set; }
         private Deck _inPlayDeck;        
-        public ObservableCollection<Card> InPlayDeck { get; set; }
+        public Deck InPlayDeck { get { return _inPlayDeck; } }
 
         private Deck _tacticalDeck;
-        public ObservableCollection<Card> TacticalDeck { get; set;}
+        public Deck TacticalDeck { get { return _tacticalDeck; } }
 
         public int Count { get; set; }
         public string ArmyName { get; private set;}
@@ -35,9 +35,7 @@ namespace GrimDarkTracker.Models
             _vpoints = 0;
             _inPlayDeck = new Deck();
             _tacticalDeck = new Deck(armyId);
-            IsTactical = mission.TacticalMission;
-            InPlayDeck = _inPlayDeck.TacticalDeck();
-            TacticalDeck = _tacticalDeck.TacticalDeck();            
+            IsTactical = mission.TacticalMission;            
             ArmyName = _tacticalDeck.Peek(0).ArmyName;
             Count = _inPlayDeck.CountCards();
             AddEvents(mission.Objectives);
@@ -46,12 +44,12 @@ namespace GrimDarkTracker.Models
         public void UpdateVictoryPoints()
         {
             VPoints = _vpoints + ObjectiveVPoints + SpecialVPoints;
-            Console.WriteLine("Total = {0}, Objective = {1}, Special = {2}", VPoints, ObjectiveVPoints, SpecialVPoints);
         }
 
         public void UpdateAll()
         {
             _inPlayDeck.CountCards();
+            UpdateVictoryPoints();
         }
 
         public void AddPoints(int p)
@@ -76,7 +74,7 @@ namespace GrimDarkTracker.Models
             return tempCard.ArmyName;
         }
 
-        //Subscribe to Objctive Event
+        //Subscribe to Objective Event
         private void AddEvents(ObservableCollection<Objective> objective)
         {
             foreach (Objective o in objective)

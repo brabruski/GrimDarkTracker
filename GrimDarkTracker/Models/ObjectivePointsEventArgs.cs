@@ -12,7 +12,7 @@ namespace GrimDarkTracker.Models
 
         public ObjectivePointsEventArgs(int total)
         {
-            this.TotalAmount = total;
+            TotalAmount = total;
         }
     }
 }

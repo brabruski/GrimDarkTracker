@@ -9,17 +9,20 @@ namespace GrimDarkTracker.ViewModels
     public class BattleViewModel : BaseViewModel
     {
         private MissionDetails _details;
-        private IMissionType _battle;
+        private static IMissionType _battle;
         public IMissionViewModel CurrentMission { get; private set; }
         private int _armyId;
-        public PlayerInfoViewModel PInfo { get; private set; }
+        public PlayerInfoViewModel PInfo { get { return _pInfo; } }
+        private static PlayerInfoViewModel _pInfo;
 
         public bool KPAvailable { get; private set; }
         private bool _battleStarted;
+        private bool _canBattleEnd;
 
         public RelayCommand AddRound { get; set; }
         public RelayCommand AddKPoint { get; set; }
         public RelayCommand DrawACard { get; set; }
+        public RelayCommand EndGame { get; set; }
 
         public bool IsTactical { get; private set; }
         public bool CanDrawACard { get; private set; }
@@ -71,9 +74,9 @@ namespace GrimDarkTracker.ViewModels
             _details = m.MDetails;
             _armyId = m.ArmyId;
             _battle = MissionFactory.CreateMission(_details);
-            CurrentMission = MissionViewModelFactory.CreateViewModel(_details.Selector, _battle);
             _player = new Player(m.ArmyId, _battle);
-            PInfo = new PlayerInfoViewModel(m.ViewModel, _player, _battle);
+            _pInfo = new PlayerInfoViewModel(m.ViewModel, _player, _battle);
+            CurrentMission = MissionViewModelFactory.CreateViewModel(_details.Selector, _battle);
             _firstBlood = false;
             _lineBreak = false;
             _slayWar = false;
@@ -82,8 +85,10 @@ namespace GrimDarkTracker.ViewModels
             AddRound = new RelayCommand(CheckRound, BattleIsEnded);
             AddKPoint = new RelayCommand(AddPoint, KPAllowed);
             DrawACard = new RelayCommand(Draw, CanDraw);
+            EndGame = new RelayCommand(CheckGameOver, BattleEndBtn);
             KPAvailable = KPAllowed();
             IsTactical = _battle.TacticalMission;
+            _canBattleEnd = BattleEndBtn();
         }
 
         private void CalculateSpecialVictoryPoints()
@@ -97,6 +102,30 @@ namespace GrimDarkTracker.ViewModels
                 amount++;
             _player.SpecialVPoints = amount;
             _player.UpdateVictoryPoints();
+        }
+
+        public static void CalculateTotalObjectivePoints(IMissionType m)
+        {
+            if (!m.TacticalMission)
+            {
+                int t = m.CalculateObjectives();
+                Objective.TotalPoints = new ObjectivePointsEventArgs(t);
+            }
+        }
+
+        public static void CalculateTotalObjectivePoints()
+        {
+            CalculateTotalObjectivePoints(_battle);
+        }
+
+        public static void UpdateViews()
+        {
+            UpdateDetails(_pInfo);
+        }
+
+        public static void UpdateDetails(PlayerInfoViewModel pInfo)
+        {
+            pInfo.UpdateInfo();
         }
 
         private void CheckRound()
@@ -115,6 +144,7 @@ namespace GrimDarkTracker.ViewModels
                 }
                 PInfo.UpdateInfo();
             }
+            CanBattleEnd = BattleEndBtn();
             BattleIsEnded();
         }
 
@@ -127,6 +157,7 @@ namespace GrimDarkTracker.ViewModels
         private void AddPoints(int p)
         {
             _player.AddPoints(p);
+            PInfo.UpdateInfo();
         }
 
         private void Draw()
@@ -140,12 +171,12 @@ namespace GrimDarkTracker.ViewModels
             _player.UpdateAll();
             if (IsTactical)
                 _battle.CalculateDraws(PInfo.Round, _player.Count);
-                        {
+            {
                 if (_player.Draws > 0)
-                return true;
+                    return true;
             }
             return false;
-            
+
         }
 
         public bool KPAllowed()
@@ -184,6 +215,22 @@ namespace GrimDarkTracker.ViewModels
             return _battleStarted = false;
         }
 
+        public bool BattleEndBtn()
+        {
+            if (_player.Round < 4)
+                _canBattleEnd = false;
+            else
+                _canBattleEnd = true;
+            _player.UpdateAll();
+            return _canBattleEnd;
+
+        }
+
+        private void CheckGameOver()
+        {
+            return;
+        }
+
         //Default to null in case there are no Tactical Objectives
         public bool DiscardObj(Card card = null)
         {
@@ -193,6 +240,13 @@ namespace GrimDarkTracker.ViewModels
         #region View Bindings
         public string MissionName { get { return _battle.MissionType + ": " + _battle.MissionName; } }
         public string MissionDescrip { get { return _battle.MissionDescription; } }
+        public bool CanBattleEnd {
+            get { return _canBattleEnd;}
+            set {
+                if (_canBattleEnd != value)
+                    _canBattleEnd = value;
+            }
+        }
         #endregion
     }
 }

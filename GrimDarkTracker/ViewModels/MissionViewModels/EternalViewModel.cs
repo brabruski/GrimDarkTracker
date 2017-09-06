@@ -13,25 +13,12 @@ namespace GrimDarkTracker.ViewModels.MissionViewModels
     class EternalViewModel : ObservableViewModel, IMissionViewModel
     {
         public ObservableCollection<Objective> Objectives { get; private set; }
-        public int TotalObjectivePoints { get; set; }
         private static IMissionType _mission;
 
-        public EternalViewModel(IMissionType m)
+        public EternalViewModel(IMissionType m, Player p)
         {
             _mission = m;
             Objectives = m.Objectives;
-            TotalObjectivePoints = 0;
-        }
-
-        public static void CalculateTotalObjectivePoints(IMissionType m)
-        {
-            int t = m.CalculateObjectives();
-            Objective.TotalPoints = new ObjectivePointsEventArgs(t);            
-        }
-
-        public static void CalculateTotalObjectivePoints()
-        {
-            CalculateTotalObjectivePoints(_mission);
         }
 
     }

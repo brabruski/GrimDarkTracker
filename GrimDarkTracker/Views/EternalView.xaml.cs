@@ -25,10 +25,5 @@ namespace GrimDarkTracker.Views
         {
             InitializeComponent();
         }
-
-        private void UpdateObjectives_Click(object sender, RoutedEventArgs e)
-        {
-            EternalViewModel.CalculateTotalObjectivePoints();
-        }
     }
 }

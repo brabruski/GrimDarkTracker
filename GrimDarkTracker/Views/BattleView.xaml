@@ -88,6 +88,15 @@
                         materialDesign:RippleAssist.Feedback="#DD000000"
                         HorizontalAlignment="Right">End Round
                 </Button>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Margin="10 0"
+                        Width="Auto"
+                        ToolTip="End the Game" 
+                        Visibility="{Binding CanBattleEnd, Converter={StaticResource visibilityConverter}}"
+                        Command="{Binding EndGame}"                        
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        HorizontalAlignment="Right">End Game
+                </Button>
             </StackPanel>
         </materialDesign:ColorZone>
         

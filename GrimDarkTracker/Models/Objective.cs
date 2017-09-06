@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrimDarkTracker.ViewModels;
+using GrimDarkTracker.ViewModels.MissionViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +11,14 @@ namespace GrimDarkTracker.Models
 {
     public class Objective
     {
-        public static ObjectivePointsEventArgs TotalPoints {
+        public static ObjectivePointsEventArgs TotalPoints
+        {
             get
             {
-                if (_totalPoints != null)
-                    return _totalPoints;
-                else
-                    return new ObjectivePointsEventArgs(0);
+                return _totalPoints;
             }
-            set {
+            set
+            {
                 if (_totalPoints != value)
                     _totalPoints = value;
             }
@@ -39,9 +40,15 @@ namespace GrimDarkTracker.Models
         public string ObjName { get; private set; }
 
         private bool _isUsed;
-        public bool IsUsed {
+        public bool IsUsed
+        {
             get { return _isUsed; }
-            set { ClaimObjective(); }
+            set {
+                ClaimObjective();
+                BattleViewModel.CalculateTotalObjectivePoints();
+                OnObjectiveClaimed(TotalPoints);
+                BattleViewModel.UpdateViews();
+            }
         }
 
         public Objective(int objValue, int name) : this(objValue, "Objective #" + name)
@@ -52,8 +59,8 @@ namespace GrimDarkTracker.Models
         {
             ObjectiveValue = objValue;
             ObjName = name;
-            _isUsed = false;            
-        }        
+            _isUsed = false;
+        }
 
         public void ClaimObjective()
         {
@@ -61,8 +68,6 @@ namespace GrimDarkTracker.Models
                 this._isUsed = false;
             else
                 this._isUsed = true;            
-            OnObjectiveClaimed(TotalPoints);
-            Console.WriteLine("Total Points = {0}", TotalPoints.TotalAmount);
-        }        
+        }
     }
 }
